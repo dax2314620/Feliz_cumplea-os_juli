@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juli 18 — Edición Especial</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            syne: ['Syne', 'sans-serif'],
+            space: ['Space Grotesk', 'sans-serif'],
+            playfair: ['Playfair Display', 'serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'wiggle': 'wiggle 1.8s ease-in-out infinite',
+            'pulse-glow': 'pulseGlow 2.5s infinite',
+          },
+          keyframes: {
+            wiggle: {
+              '0%, 100%': { transform: 'rotate(-2deg) scale(1)' },
+              '25%': { transform: 'rotate(2.5deg) scale(1.03)' },
+              '50%': { transform: 'rotate(-2.5deg) scale(1.02)' },
+              '75%': { transform: 'rotate(2deg) scale(1.03)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 18px rgba(250, 204, 21, 0.5)' },
+              '50%': { boxShadow: '0 0 38px rgba(250, 204, 21, 0.95)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #060814;
+      color: #f8fafc;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #060814;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #64748b;
+    }
+
+    .stars-bg {
+      background-image: 
+        radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 160px 120px, rgba(167,139,250,0.9), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 250px 80px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 310px 190px, rgba(250,204,21,0.8), rgba(0,0,0,0));
+      background-repeat: repeat;
+      background-size: 350px 240px;
+    }
+
+    @keyframes dustFloat {
+      0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.25; }
+      50% { transform: translateY(-22px) translateX(10px); opacity: 0.75; }
+    }
+    .studio-dust {
+      animation: dustFloat 5s ease-in-out infinite;
+    }
+
+    @keyframes turtleWalkBob {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      25% { transform: translateY(-4px) rotate(-1.6deg); }
+      75% { transform: translateY(-4px) rotate(1.6deg); }
+    }
+    .turtle-bob {
+      animation: turtleWalkBob 0.7s ease-in-out infinite;
+    }
+
+    @keyframes flipperStepFront {
+      0%, 100% { transform: rotate(-8deg); }
+      50% { transform: rotate(12deg); }
+    }
+    @keyframes flipperStepBack {
+      0%, 100% { transform: rotate(10deg); }
+      50% { transform: rotate(-10deg); }
+    }
+    .flipper-front {
+      transform-origin: center top;
+      animation: flipperStepFront 0.7s ease-in-out infinite;
+    }
+    .flipper-back {
+      transform-origin: center top;
+      animation: flipperStepBack 0.7s ease-in-out infinite;
+    }
+
+    @keyframes flipperWaveHello {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-38deg); }
+      50% { transform: rotate(-12deg); }
+      75% { transform: rotate(-42deg); }
+    }
+    .waving-hello {
+      transform-origin: 62px 47px;
+      animation: flipperWaveHello 0.65s ease-in-out infinite !important;
+    }
+
+    @keyframes catPurrBounce {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-3px) rotate(1.2deg); }
+    }
+    .cat-bounce {
+      animation: catPurrBounce 1.1s ease-in-out infinite;
+    }
+
+    @keyframes tailSway {
+      0%, 100% { transform: rotate(-5deg); }
+      50% { transform: rotate(8deg); }
+    }
+    .cat-tail {
+      transform-origin: 24px 68px;
+      animation: tailSway 1.5s ease-in-out infinite;
+    }
+
+    @keyframes speechPop {
+      0% { transform: scale(0) translateY(12px); opacity: 0; }
+      70% { transform: scale(1.08) translateY(-2px); opacity: 1; }
+      100% { transform: scale(1) translateY(0px); opacity: 1; }
+    }
+    .speech-bubble-anim {
+      animation: speechPop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    .paper-envelope {
+      background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 0);
+      background-size: 12px 12px;
+    }
+
+    .envelope-flap {
+      transform-origin: top center;
+      transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .envelope-open .envelope-flap {
+      transform: rotateX(180deg);
+      z-index: 1;
+    }
+    .vip-ticket {
+      transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .envelope-open .vip-ticket {
+      transform: translateY(-125px) scale(1.04);
+    }
+
+    .perspective-1000 {
+      perspective: 1200px;
+    }
+    .preserve-3d {
+      transform-style: preserve-3d;
+      transition: transform 0.75s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .flipped {
+      transform: rotateY(180deg);
+    }
+    .backface-hidden {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .rotate-y-180 {
+      transform: rotateY(180deg);
+    }
+
+    @keyframes coinSpinFlip {
+      0% { transform: perspective(900px) rotateY(0deg) scale(1); }
+      50% { transform: perspective(900px) rotateY(180deg) scale(1.08); }
+      100% { transform: perspective(900px) rotateY(360deg) scale(1); }
+    }
+    .coin-flipping {
+      animation: coinSpinFlip 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .hollywoo-letter {
+      text-shadow: 0 4px 0 #94a3b8, 0 8px 18px rgba(0,0,0,0.85);
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .hollywoo-letter.active-juli {
+      color: #fde047;
+      text-shadow: 0 0 14px rgba(253, 224, 71, 0.9), 0 4px 0 #ca8a04, 0 10px 25px rgba(250, 204, 21, 0.5);
+      transform: translateY(-6px) scale(1.08);
+    }
+
+    .reel-spinning {
+      animation: spin 2.8s linear infinite;
+    }
+
+    .water-rays {
+      background: linear-gradient(125deg, rgba(52, 211, 153, 0.14) 0%, rgba(16, 185, 129, 0.03) 40%, rgba(6, 78, 59, 0) 75%);
+    }
+
+    .relic-found {
+      filter: drop-shadow(0 0 12px rgba(250, 204, 21, 0.95));
+      transform: scale(1.12);
+    }
+
+    @keyframes riseBubble {
+      0% { transform: translateY(0) scale(0.7); opacity: 0.85; }
+      100% { transform: translateY(-180px) scale(1.3); opacity: 0; }
+    }
+    .water-bubble {
+      position: absolute;
+      border-radius: 9999px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(110, 231, 183, 0.3));
+      border: 1px solid rgba(255,255,255,0.5);
+      pointer-events: none;
+      animation: riseBubble 1.8s ease-out forwards;
+    }
+
+    @keyframes galaxyPop {
+      0% { transform: translate(0, 0) scale(1); opacity: 1; }
+      100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+    }
+    .galaxy-spark {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: galaxyPop 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-amber-400 selection:text-slate-950">
+
+  <!-- CANVAS CONFETTI GLOBAL -->
+  <canvas id="confetti-canvas" class="fixed inset-0 pointer-events-none z-[120]"></canvas>
+
+  <!-- NOTIFICACIÓN FLOTANTE (TOAST) -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-[110] flex flex-col gap-3 max-w-sm pointer-events-none"></div>
+
+  <!-- =========================================================
+       1. BARRA SUPERIOR FLOTANTE: PASAPORTE DE RELIQUIAS (0/4)
+  ========================================================== -->
+  <header id="hud-bar" class="fixed top-0 left-0 right-0 z-[90] transition-all duration-500 -translate-y-full opacity-0 px-3 sm:px-6 pt-3">
+    <div class="max-w-5xl mx-auto bg-slate-950/85 backdrop-blur-xl border border-white/15 rounded-2xl px-4 py-2.5 shadow-2xl flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5">
+        <span class="inline-flex h-2.5 w-2.5 rounded-full bg-amber-400 animate-ping"></span>
+        <span class="font-syne font-bold text-xs sm:text-sm tracking-wider uppercase text-amber-300">
+          Pasaporte de Reliquias
+        </span>
+        <span id="relic-counter-badge" class="bg-white/10 border border-white/15 text-white font-space text-xs font-bold px-2.5 py-0.5 rounded-full">
+          0/4 Easter Eggs
+        </span>
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-3" id="hud-relics-list">
+        <button onclick="scrollToSection('mundo-bojack')" title="1. Botella del Planetario (BoJack)" id="hud-relic-1" class="w-8 h-8 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-sm opacity-40 transition-all hover:opacity-80 cursor-pointer">
+          🍾
+        </button>
+        <button onclick="scrollToSection('mundo-mixtape')" title="2. Símbolo ||-// (Twenty One Pilots)" id="hud-relic-2" class="w-8 h-8 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center font-space font-bold text-[10px] opacity-40 transition-all hover:opacity-80 cursor-pointer">
+          ||-//
+        </button>
+        <button onclick="scrollToSection('mundo-mixtape')" title="3. Guitarra Acústica" id="hud-relic-3" class="w-8 h-8 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-sm opacity-40 transition-all hover:opacity-80 cursor-pointer">
+          🎸
+        </button>
+        <button onclick="scrollToSection('mundo-tortugas')" title="4. Tortuga Dorada (Santuario)" id="hud-relic-4" class="w-8 h-8 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-sm opacity-40 transition-all hover:opacity-80 cursor-pointer">
+          🐢
+        </button>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-4 text-xs font-space text-slate-300">
+        <a href="#mundo-bojack" class="hover:text-indigo-300 transition">Planetario</a>
+        <a href="#mundo-mixtape" class="hover:text-amber-300 transition">Mixtape & Fotos</a>
+        <a href="#palabras-corazon" class="hover:text-rose-300 transition">Palabras</a>
+        <a href="#mundo-tortugas" class="hover:text-emerald-300 transition">Santuario</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MODAL EXPLORADORA MAESTRA (4/4) -->
+  <div id="master-explorer-modal" class="fixed inset-0 z-[115] hidden items-center justify-center bg-black/80 backdrop-blur-md p-4">
+    <div class="relative max-w-md w-full bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-950 border-2 border-amber-400 rounded-3xl p-7 text-center shadow-[0_0_50px_rgba(251,191,36,0.4)]">
+      <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-amber-400/20 border border-amber-300 flex items-center justify-center text-3xl animate-bounce">
+        👑
+      </div>
+      <span class="text-xs font-space uppercase tracking-[0.25em] text-amber-300">4/4 Reliquias Desbloqueadas</span>
+      <h3 class="font-syne text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-3">
+        ¡Exploradora Maestra, Juls!
+      </h3>
+      <p class="text-slate-300 text-sm leading-relaxed mb-5">
+        Encontraste cada referencia escondida en este universo hecho a tu medida. Oficialmente tienes nivel máximo de curiosidad, buen gusto musical y aguante para mis locuras. ¡Felices 18, Juli!
+      </p>
+      <button onclick="closeModal('master-explorer-modal')" class="w-full py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-syne font-bold text-sm transition cursor-pointer">
+        Seguir explorando mi regalo
+      </button>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       2. CINEMÁTICA INICIAL (COLORES SÓLIDOS Y NÍTIDOS)
+  ========================================================== -->
+  <section id="intro-overlay" class="fixed inset-0 z-[100] bg-gradient-to-b from-[#0b0e1a] via-[#131729] to-[#080a12] text-slate-100 flex flex-col items-center justify-center p-4 sm:p-8 transition-all duration-1000 select-none overflow-hidden">
+    <div id="cinematic-stage" class="relative w-full max-w-4xl h-[520px] sm:h-[560px] bg-gradient-to-b from-[#171d36] via-[#1e2542] to-[#111526] border border-amber-300/25 rounded-[2.2rem] shadow-[0_35px_90px_rgba(0,0,0,0.75),inset_0_1px_18px_rgba(253,224,71,0.12)] overflow-hidden flex flex-col justify-between p-6">
+      
+      <!-- Foco de luz cinematográfica cenital + partículas doradas flotantes -->
+      <div class="absolute -top-28 left-1/2 -translate-x-1/2 w-[660px] h-[360px] bg-amber-300/15 blur-[95px] rounded-full pointer-events-none"></div>
+      <div class="absolute inset-0 stars-bg opacity-45 pointer-events-none"></div>
+
+      <span class="studio-dust absolute top-24 left-1/4 w-1.5 h-1.5 rounded-full bg-amber-200/70 pointer-events-none"></span>
+      <span class="studio-dust absolute top-36 right-1/3 w-2 h-2 rounded-full bg-amber-300/60 pointer-events-none" style="animation-delay: 1.2s;"></span>
+      <span class="studio-dust absolute top-48 left-2/3 w-1 h-1 rounded-full bg-white/70 pointer-events-none" style="animation-delay: 2.3s;"></span>
+
+      <!-- Escenario / Piso de madera pulida -->
+      <div class="absolute bottom-0 left-0 right-0 h-[128px] bg-gradient-to-b from-[#251c1a] via-[#1c1412] to-[#0f0a09] border-t border-amber-200/20 pointer-events-none">
+        <div class="w-full h-6 bg-gradient-to-b from-amber-300/10 to-transparent"></div>
+      </div>
+
+      <!-- Barra superior de la escena -->
+      <div class="flex items-center justify-between z-30">
+        <div class="flex items-center gap-2.5 bg-slate-950/75 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-amber-300/25 shadow-lg">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping"></span>
+          <span id="cine-status-text" class="font-space text-xs uppercase tracking-[0.2em] text-amber-200 font-semibold">
+            Escena 01 • Unas visitas llegan...
+          </span>
+        </div>
+        <button id="skip-cine-btn" onclick="fastForwardCinematic()" class="text-xs font-space text-slate-300 hover:text-amber-300 bg-slate-950/70 hover:bg-slate-900 px-3.5 py-1.5 rounded-full border border-white/15 shadow-lg cursor-pointer transition">
+          Adelantar a la carta →
+        </button>
+      </div>
+
+      <!-- Tortuga 1 (Con gorrito de fiesta que se acerca y saluda a Juls) -->
+      <div id="cine-turtle-greeter" class="absolute transition-all duration-[1400ms] ease-in-out z-30" style="left: -160px; bottom: 76px; transform: scale(1);">
+        <div id="turtle-hello-bubble" class="hidden absolute -top-20 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-300 to-yellow-400 text-slate-950 px-4 py-1.5 rounded-2xl shadow-[0_10px_25px_rgba(250,204,21,0.5)] border border-white font-syne font-extrabold text-base whitespace-nowrap speech-bubble-anim">
+          ¡Hola, Juls! 👋🐢
+          <div class="w-3 h-3 bg-amber-300 rotate-45 absolute -bottom-1.5 left-1/2 -translate-x-1/2"></div>
+        </div>
+
+        <div id="greeter-body" class="turtle-bob relative">
+          <svg width="108" height="74" viewBox="0 0 110 76" class="drop-shadow-[0_10px_12px_rgba(0,0,0,0.45)]">
+            <ellipse cx="52" cy="68" rx="42" ry="6" fill="#000000" opacity="0.45"/>
+            <path d="M24 50 C18 56, 16 64, 24 65 C31 65, 33 57, 32 50 Z" fill="#4d7c0f" class="flipper-back"/>
+            <path d="M18 48 Q8 47 6 50 Q12 53 19 52 Z" fill="#365314"/>
+            <path d="M68 46 Q80 45 85 39" stroke="#65a30d" stroke-width="11" stroke-linecap="round" fill="none"/>
+            <ellipse cx="90" cy="38" rx="13" ry="9.5" fill="#84cc16"/>
+            <polygon points="84,29 90,15 96,29" fill="#ec4899" stroke="#fce7f3" stroke-width="0.9"/>
+            <circle cx="90" cy="14" r="2.3" fill="#fde047"/>
+            <circle cx="93" cy="35.5" r="3.3" fill="#0f172a"/>
+            <circle cx="93.9" cy="34.5" r="1.2" fill="#ffffff"/>
+            <path d="M89 42 Q95 44.5 101 41.5" stroke="#1a2e05" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+            <path d="M16 50 C16 18, 74 18, 74 50 Z" fill="#3f6212" stroke="#1a2e05" stroke-width="1.8"/>
+            <polygon points="45,21 57,28 53,41 37,41 33,28" fill="#4d7c0f" stroke="#bef264" stroke-width="1.4"/>
+            <rect x="14" y="48" width="62" height="6.5" rx="3.2" fill="#eab308" stroke="#713f12" stroke-width="1"/>
+            <path id="greeter-front-flipper" d="M58 51 C56 58, 58 66, 66 66 C72 66, 71 57, 67 51 Z" fill="#84cc16" class="flipper-front"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Tortuga 2 -->
+      <div id="cine-turtle-2" class="absolute transition-all duration-[1500ms] ease-out z-20" style="left: -190px; bottom: 68px;">
+        <div class="turtle-bob" style="animation-delay: 0.2s;">
+          <svg width="90" height="62" viewBox="0 0 110 72" class="drop-shadow-[0_8px_10px_rgba(0,0,0,0.4)]">
+            <ellipse cx="52" cy="64" rx="40" ry="5.5" fill="#000000" opacity="0.4"/>
+            <path d="M24 46 C18 52, 16 60, 24 61 C31 61, 33 53, 32 46 Z" fill="#115e59" class="flipper-back"/>
+            <path d="M68 42 Q80 41 85 35" stroke="#0f766e" stroke-width="10" stroke-linecap="round" fill="none"/>
+            <ellipse cx="90" cy="34" rx="12" ry="9" fill="#14b8a6"/>
+            <circle cx="93" cy="31.5" r="2.8" fill="#042f2e"/>
+            <circle cx="93.7" cy="30.7" r="1" fill="#ffffff"/>
+            <path d="M16 46 C16 15, 74 15, 74 46 Z" fill="#0f766e" stroke="#042f2e" stroke-width="1.8"/>
+            <polygon points="45,18 56,25 52,37 38,37 34,25" fill="#0d9488" stroke="#5eead4" stroke-width="1.3"/>
+            <rect x="14" y="44" width="62" height="6" rx="3" fill="#eab308" stroke="#713f12" stroke-width="1"/>
+            <path d="M58 47 C56 54, 58 62, 66 62 C72 62, 71 53, 67 47 Z" fill="#14b8a6" class="flipper-front"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Tortuga 3 -->
+      <div id="cine-turtle-3" class="absolute transition-all duration-[1600ms] ease-out z-10 opacity-95" style="left: -220px; bottom: 92px;">
+        <div class="turtle-bob" style="animation-delay: 0.4s;">
+          <svg width="76" height="52" viewBox="0 0 110 72">
+            <ellipse cx="52" cy="64" rx="38" ry="5" fill="#000000" opacity="0.38"/>
+            <path d="M24 46 C18 52, 16 60, 24 61 C31 61, 33 53, 32 46 Z" fill="#365314" class="flipper-back"/>
+            <ellipse cx="89" cy="35" rx="11.5" ry="8.5" fill="#65a30d"/>
+            <circle cx="92" cy="32.5" r="2.5" fill="#1a2e05"/>
+            <circle cx="92.7" cy="31.8" r="0.9" fill="#ffffff"/>
+            <path d="M16 46 C16 16, 74 16, 74 46 Z" fill="#3f6212" stroke="#1a2e05" stroke-width="1.6"/>
+            <rect x="14" y="44" width="62" height="5.5" rx="2.8" fill="#eab308"/>
+            <path d="M58 47 C56 54, 58 62, 66 62 C72 62, 71 53, 67 47 Z" fill="#65a30d" class="flipper-front"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Convoy Principal: Sobre de lujo + Cuerda Dorada + Tortuga Gigante + Gato Naranja -->
+      <div id="giant-convoy" class="absolute transition-all duration-[2800ms] ease-out z-25 flex items-end" style="left: -740px; bottom: 60px;">
+        
+        <div class="relative mr-0 mb-3">
+          <div class="absolute -bottom-3 left-3 right-3 h-5 bg-black/45 blur-md rounded-full"></div>
+          <div id="sealed-envelope" class="relative w-[235px] sm:w-[285px] h-[162px] sm:h-[188px] select-none">
+            <div id="vip-ticket" class="vip-ticket absolute left-3 right-3 top-3 h-[142px] bg-gradient-to-r from-amber-200 via-yellow-300 to-amber-400 rounded-xl p-3.5 text-slate-950 shadow-xl border border-amber-100 flex flex-col justify-between z-[5]">
+              <div class="flex justify-between items-start border-b border-dashed border-slate-900/30 pb-1">
+                <div>
+                  <span class="text-[8px] font-space font-bold uppercase tracking-widest block text-slate-800">VIP EXPERIENCE</span>
+                  <h2 class="font-syne font-extrabold text-sm sm:text-base leading-none">JULI • CAPÍTULO 18</h2>
+                </div>
+                <span class="bg-slate-950 text-amber-300 font-space font-bold text-[10px] px-2 py-0.5 rounded">18 AÑOS</span>
+              </div>
+              <p class="font-playfair italic text-[11px] text-slate-900 leading-tight">
+                "Un viaje por estrellas, música y tortugas para celebrar a mi mejor amiga."
+              </p>
+              <div class="flex justify-between items-center text-[8px] font-space font-bold uppercase text-slate-800 pt-1 border-t border-dashed border-slate-900/30">
+                <span>PARA SIEMPRE</span>
+                <span>NO. 0018-JLS</span>
+              </div>
+            </div>
+
+            <div class="paper-envelope absolute inset-0 bg-gradient-to-br from-[#232946] via-[#181c30] to-[#0f1221] rounded-2xl border border-amber-300/35 shadow-[0_20px_40px_rgba(0,0,0,0.6)] z-[2]"></div>
+
+            <div class="absolute inset-0 z-[10] pointer-events-none overflow-hidden rounded-2xl">
+              <div class="paper-envelope absolute bottom-0 left-0 right-0 h-[102px] bg-gradient-to-t from-[#121626] via-[#1c223b] to-[#262e4f] border-t border-amber-200/20 shadow-inner" style="clip-path: polygon(0 100%, 50% 18%, 100% 100%);"></div>
+              <div class="paper-envelope absolute inset-y-0 left-0 w-1/2 bg-[#1c223b]/95" style="clip-path: polygon(0 0, 100% 50%, 0 100%);"></div>
+              <div class="paper-envelope absolute inset-y-0 right-0 w-1/2 bg-[#1c223b]/95" style="clip-path: polygon(100% 0, 0 50%, 100% 100%);"></div>
+            </div>
+
+            <div class="envelope-flap paper-envelope absolute top-0 left-0 right-0 h-[102px] bg-gradient-to-b from-[#2b3459] to-[#1e243d] rounded-t-2xl border-b border-amber-200/30 z-[15] pointer-events-none shadow-md" style="clip-path: polygon(0 0, 100% 0, 50% 92%);"></div>
+
+            <button id="wax-seal-btn" onclick="openEnvelope()" aria-label="Romper sello de lacre 18" class="absolute left-1/2 top-[48%] -translate-x-1/2 -translate-y-1/2 z-[20] w-16 h-16 rounded-full bg-gradient-to-br from-amber-300 via-amber-500 to-yellow-800 border-4 border-amber-200/90 shadow-[0_8px_28px_rgba(245,158,11,0.9),inset_0_2px_4px_rgba(255,255,255,0.75)] flex items-center justify-center cursor-pointer hover:scale-110 active:scale-95 transition-transform animate-pulse-glow">
+              <div class="w-11 h-11 rounded-full border-2 border-amber-950/40 flex flex-col items-center justify-center bg-amber-400/25">
+                <span class="font-playfair font-bold text-lg text-slate-950 leading-none">18</span>
+                <span class="text-[7px] font-space font-bold uppercase tracking-widest text-slate-950">ABRIR</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cuerda trenzada dorada -->
+        <svg width="56" height="44" viewBox="0 0 60 44" class="mb-11 -mx-1 z-10 drop-shadow">
+          <path d="M0,28 Q30,38 60,18" stroke="#92400e" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M0,28 Q30,38 60,18" stroke="#f59e0b" stroke-width="3" stroke-dasharray="5 3" fill="none" stroke-linecap="round"/>
+          <path d="M0,27 Q30,37 60,17" stroke="#fef3c7" stroke-width="1" stroke-dasharray="3 5" fill="none"/>
+        </svg>
+
+        <!-- Tortuga Gigante + Gato Naranja (Colores sólidos garantizados) -->
+        <div class="relative flex flex-col items-center">
+          <div class="cat-bounce -mb-7 z-20 relative">
+            <svg width="96" height="88" viewBox="0 0 96 90" class="drop-shadow-[0_8px_12px_rgba(0,0,0,0.45)]">
+              <g class="cat-tail">
+                <path d="M24 68 Q6 58 10 38 Q13 28 20 34 Q16 48 28 60 Z" fill="#f97316" stroke="#9a3412" stroke-width="1.2"/>
+                <path d="M12 46 Q16 44 18 47" stroke="#7c2d12" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                <path d="M14 54 Q19 52 21 55" stroke="#7c2d12" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              </g>
+              <ellipse cx="48" cy="62" rx="22" ry="19" fill="#f97316" stroke="#9a3412" stroke-width="1.2"/>
+              <ellipse cx="56" cy="64" rx="11" ry="13" fill="#ffedd5"/>
+              <path d="M30 55 Q38 53 41 57" stroke="#9a3412" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M28 63 Q36 61 39 65" stroke="#9a3412" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <ellipse cx="56" cy="78" rx="7" ry="4.8" fill="#ffedd5" stroke="#c2410c" stroke-width="1"/>
+              <ellipse cx="42" cy="78" rx="7" ry="4.8" fill="#ffedd5" stroke="#c2410c" stroke-width="1"/>
+              <polygon points="31,32 27,10 43,22" fill="#f97316" stroke="#9a3412" stroke-width="1.2"/>
+              <polygon points="32,28 29,14 40,22" fill="#fecdd3"/>
+              <polygon points="65,32 69,10 53,22" fill="#f97316" stroke="#9a3412" stroke-width="1.2"/>
+              <polygon points="64,28 67,14 56,22" fill="#fecdd3"/>
+              <ellipse cx="48" cy="34" rx="19" ry="16.5" fill="#fb923c" stroke="#9a3412" stroke-width="1.4"/>
+              <path d="M41 21 L44 25 L48 21 L52 25 L55 21" stroke="#9a3412" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <ellipse cx="48" cy="40" rx="8.5" ry="6" fill="#fff7ed"/>
+              <ellipse cx="40" cy="33" rx="3.4" ry="3.8" fill="#fef08a"/>
+              <ellipse cx="40" cy="33" rx="2.4" ry="3.2" fill="#65a30d"/>
+              <ellipse cx="40" cy="33" rx="1.1" ry="2.6" fill="#0f172a"/>
+              <circle cx="41.2" cy="31.6" r="1.1" fill="#ffffff"/>
+              <ellipse cx="56" cy="33" rx="3.4" ry="3.8" fill="#fef08a"/>
+              <ellipse cx="56" cy="33" rx="2.4" ry="3.2" fill="#65a30d"/>
+              <ellipse cx="56" cy="33" rx="1.1" ry="2.6" fill="#0f172a"/>
+              <circle cx="57.2" cy="31.6" r="1.1" fill="#ffffff"/>
+              <polygon points="46,37.5 50,37.5 48,40" fill="#fb7185"/>
+              <path d="M44 42 Q46 44.5 48 41 Q50 44.5 52 42" stroke="#7c2d12" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <line x1="24" y1="36" x2="36" y2="38" stroke="#fff7ed" stroke-width="1.2"/>
+              <line x1="23" y1="41" x2="36" y2="41" stroke="#fff7ed" stroke-width="1.2"/>
+              <line x1="60" y1="38" x2="72" y2="36" stroke="#fff7ed" stroke-width="1.2"/>
+              <line x1="60" y1="41" x2="73" y2="41" stroke="#fff7ed" stroke-width="1.2"/>
+            </svg>
+          </div>
+
+          <div class="turtle-bob">
+            <svg width="245" height="162" viewBox="0 0 250 165" class="drop-shadow-[0_14px_20px_rgba(0,0,0,0.5)]">
+              <ellipse cx="120" cy="150" rx="102" ry="11" fill="#000000" opacity="0.45"/>
+              <path d="M52 108 C42 122, 40 142, 56 144 C70 144, 74 126, 70 108 Z" fill="#4d7c0f" stroke="#1a2e05" stroke-width="1.5" class="flipper-back"/>
+              <path d="M36 102 Q14 98 10 106 Q22 114 38 111 Z" fill="#365314"/>
+              <path d="M162 96 Q188 94 200 82" stroke="#65a30d" stroke-width="24" stroke-linecap="round" fill="none"/>
+              <ellipse cx="212" cy="80" rx="28" ry="21" fill="#84cc16" stroke="#365314" stroke-width="2"/>
+              <circle cx="219" cy="74" r="6.5" fill="#1c1917"/>
+              <circle cx="219" cy="74" r="4.5" fill="#78350f"/>
+              <circle cx="219" cy="74" r="2.5" fill="#090d16"/>
+              <circle cx="221" cy="72" r="2.2" fill="#ffffff"/>
+              <path d="M210 89 Q222 95 235 88" stroke="#1a2e05" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+              <path d="M32 108 C32 32, 174 32, 174 108 Z" fill="#3f6212" stroke="#1a2e05" stroke-width="3.2"/>
+              <polygon points="103,40 132,56 122,86 84,86 74,56" fill="#4d7c0f" stroke="#bef264" stroke-width="2.4"/>
+              <path d="M74 56 L42 74 M132 56 L164 74 M84 86 L65 106 M122 86 L141 106 M103 40 L103 33" stroke="#bef264" stroke-width="2.2" opacity="0.65"/>
+              <path d="M34 94 Q103 102 172 94" stroke="#92400e" stroke-width="5" fill="none"/>
+              <circle cx="34" cy="94" r="4.5" fill="#fbbf24" stroke="#78350f" stroke-width="1.5"/>
+              <rect x="28" y="104" width="150" height="13" rx="6.5" fill="#eab308" stroke="#713f12" stroke-width="1.8"/>
+              <path d="M136 110 C132 126, 136 145, 154 145 C168 145, 166 125, 158 110 Z" fill="#84cc16" stroke="#365314" stroke-width="1.5" class="flipper-front"/>
+              <circle cx="161" cy="142" r="2.4" fill="#fef08a"/>
+              <circle cx="155" cy="144" r="2.4" fill="#fef08a"/>
+              <circle cx="149" cy="144" r="2.2" fill="#fef08a"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div id="cine-final-prompt" class="opacity-0 transition-opacity duration-700 text-center z-30 mt-auto bg-slate-950/85 backdrop-blur-md py-3 px-6 rounded-2xl border border-amber-300/30 shadow-xl mx-auto">
+        <p class="font-syne font-extrabold text-lg sm:text-xl text-white">
+          ¡Entrega especial para <span class="text-amber-300">Juli</span>! 🐢🧡🐈
+        </p>
+        <p class="font-space text-xs text-slate-300 mt-0.5">
+          Toca el sello dorado <strong class="text-amber-300">18</strong> de la carta que trajo la tortuga gigante para abrir tu regalo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENIDO PRINCIPAL DE LA PÁGINA -->
+  <main id="main-content" class="opacity-0 transition-opacity duration-1000">
+
+    <!-- =========================================================
+         3. MUNDO 1: BOJACK HORSEMAN (CON FRASES ICÓNICAS EN LA BOTELLA)
+    ========================================================== -->
+    <section id="mundo-bojack" class="relative min-h-screen pt-24 pb-20 px-4 sm:px-8 bg-gradient-to-b from-[#050714] via-[#131036] to-[#1e1647] stars-bg overflow-hidden flex flex-col justify-between">
+      <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[680px] h-[420px] bg-purple-600/20 blur-[130px] rounded-full pointer-events-none"></div>
+
+      <div class="max-w-5xl mx-auto w-full relative z-10">
+        <div class="text-center mb-10">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-200 font-space text-xs uppercase tracking-[0.2em] mb-3">
+            Mundo 01 • Planetario & HollYWOO
+          </span>
+          <h2 class="font-syne text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+            Bajo la cúpula de estrellas, <span class="text-indigo-300">Juls</span>
+          </h2>
+          <p class="text-indigo-100/80 max-w-2xl mx-auto mt-3 text-sm sm:text-base leading-relaxed">
+            Porque en medio de todo el ruido del mundo y las crisis de la vida adulta que hoy estrenas, siempre hace falta alguien que se quede mirando el cielo contigo.
+          </p>
+        </div>
+
+        <div class="bg-slate-950/60 backdrop-blur-md border border-indigo-400/25 rounded-3xl p-6 sm:p-8 mb-10 text-center shadow-2xl">
+          <p class="text-xs font-space uppercase tracking-widest text-indigo-300 mb-4">
+            ✨ Toca o pasa el cursor sobre las letras de la colina ✨
+          </p>
+          <div id="hollywoo-sign" class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-3 py-3 select-none"></div>
+          <div class="mt-4 flex justify-center">
+            <button onclick="toggleAllHollywoo()" class="text-xs font-space px-4 py-1.5 rounded-full bg-indigo-500/25 hover:bg-indigo-500/40 border border-indigo-300/30 text-indigo-100 transition cursor-pointer">
+              Encender / Restaurar letrero completo
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-6 flex flex-col items-center">
+            <div class="relative w-full max-w-sm bg-gradient-to-b from-indigo-950/90 to-slate-950/95 border border-indigo-400/30 rounded-3xl p-6 shadow-2xl flex flex-col items-center">
+              <div class="w-full flex justify-between items-center text-[11px] font-space text-indigo-300/80 mb-4">
+                <span>MONEDA BOJACK • GALERÍA</span>
+                <span id="bojack-coin-counter" class="px-2 py-0.5 rounded-full bg-indigo-500/20 border border-indigo-300/30 text-amber-300 font-bold">1 / 6</span>
+              </div>
+
+              <button id="bojack-coin-btn" onclick="flipBojackCoin()" aria-label="Tocar moneda de BoJack para cambiar imagen" class="group relative w-64 h-64 sm:w-72 sm:h-72 rounded-full p-2.5 bg-gradient-to-tr from-amber-600 via-yellow-300 to-amber-500 shadow-[0_0_38px_rgba(250,204,21,0.45)] cursor-pointer transition-transform hover:scale-105 active:scale-95 focus:outline-none">
+                <div class="w-full h-full rounded-full border-4 border-dashed border-amber-900/50 p-1.5 bg-slate-950 overflow-hidden relative">
+                  <img id="bojack-coin-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBj9gTlWyKiVhKRl2OHDwzr5G8DysbqjPerjLH5W3K2Q&s=10" alt="BoJack Horseman Coin" class="w-full h-full object-cover rounded-full transition-opacity duration-300" />
+                  <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-white/15 to-transparent pointer-events-none"></div>
+                </div>
+                <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-4 py-1 rounded-full bg-amber-400 text-slate-950 font-syne font-extrabold text-xs shadow-lg border border-amber-100 group-hover:bg-amber-300 transition">
+                  🪙 Toca la moneda para girar
+                </span>
+              </button>
+
+              <p class="text-center font-playfair italic text-xs text-indigo-200/90 mt-6">
+                "Cada giro saca una escena distinta de HollYWOO para ti, Juls."
+              </p>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6">
+            <div id="galaxy-box" class="relative bg-slate-900/75 backdrop-blur-xl border border-indigo-400/30 rounded-3xl p-7 sm:p-8 shadow-2xl overflow-hidden">
+              <div class="flex items-start justify-between gap-4 mb-4">
+                <div>
+                  <span class="text-xs font-space uppercase tracking-wider text-purple-300">Artefacto Interactivo • Reliquia Oculta</span>
+                  <h3 class="font-syne text-2xl font-bold text-white mt-1">La Botella del Planetario</h3>
+                </div>
+                <button id="relic-btn-1" onclick="collectRelic(1, 'Botella del Planetario', 'Reliquia de BoJack: Aunque todo a veces parezca cuesta arriba, siempre vale la pena seguir avanzando.', this)" class="group relative w-14 h-14 rounded-2xl bg-indigo-500/20 hover:bg-indigo-500/35 border border-indigo-300/40 flex items-center justify-center text-3xl cursor-pointer transition-all hover:scale-110 active:rotate-12" title="Atrapar reliquia de la botella">
+                  🍾
+                  <span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-amber-400 animate-ping"></span>
+                </button>
+              </div>
+
+              <p class="text-slate-300 text-sm mb-5 leading-relaxed">
+                Agita la botella del planetario para liberar polvo de galaxias y leer frases icónicas de <strong class="text-indigo-200">BoJack Horseman</strong>:
+              </p>
+
+              <div class="min-h-[125px] bg-indigo-950/70 border border-indigo-400/25 rounded-2xl p-5 flex items-center justify-center text-center mb-5 relative">
+                <p id="bojack-quote-text" class="font-playfair italic text-base sm:text-lg text-indigo-100 leading-relaxed transition-opacity duration-200">
+                  "El universo es un monstruo cruel e indiferente... pero a veces es bonito tener a alguien que se quede contigo a mirar las estrellas."
+                </p>
+              </div>
+
+              <button onclick="shakePlanetariumBottle()" class="w-full py-3.5 px-5 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-400 hover:to-purple-500 text-white font-syne font-bold text-sm shadow-lg shadow-indigo-900/50 transition cursor-pointer flex items-center justify-center gap-2">
+                <span>✨ Agitar botella y leer frase icónica</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full mt-16 pointer-events-none opacity-65">
+        <svg viewBox="0 0 1200 110" class="w-full h-16 sm:h-24" preserveAspectRatio="none">
+          <path d="M0,110 L0,75 Q180,35 360,72 T750,58 Q980,30 1200,70 L1200,110 Z" fill="#09071c"/>
+          <rect x="480" y="34" width="24" height="76" fill="#09071c"/>
+          <rect x="510" y="20" width="32" height="90" fill="#09071c"/>
+          <rect x="548" y="42" width="22" height="68" fill="#09071c"/>
+          <rect x="576" y="28" width="28" height="82" fill="#09071c"/>
+          <path d="M180,75 L182,42 M182,42 Q170,38 165,46 M182,42 Q194,38 199,46" stroke="#09071c" stroke-width="2.5" fill="none"/>
+          <path d="M980,68 L982,35 M982,35 Q970,31 965,39 M982,35 Q994,31 999,39" stroke="#09071c" stroke-width="2.5" fill="none"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         4. MUNDO 2: SOUNDTRACK & 5 POLAROIDS
+    ========================================================== -->
+    <section id="mundo-mixtape" class="relative py-24 px-4 sm:px-8 bg-gradient-to-b from-[#2b140e] via-[#451d12] to-[#1f120d] border-t border-amber-500/20 overflow-hidden">
+      <div class="absolute top-1/3 right-10 w-[450px] h-[450px] bg-amber-600/15 blur-[130px] rounded-full pointer-events-none"></div>
+
+      <div class="max-w-5xl mx-auto relative z-10">
+        <div class="text-center mb-12">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-amber-500/20 border border-amber-400/30 text-amber-200 font-space text-xs uppercase tracking-[0.2em] mb-3">
+            Mundo 02 • Mixtape Oficial & Archivo de Fotos
+          </span>
+          <h2 class="font-syne text-3xl sm:text-5xl font-extrabold text-amber-50 tracking-tight">
+            Nuestras canciones y recuerdos, <span class="text-amber-400">Juli</span>
+          </h2>
+          <p class="text-amber-100/80 max-w-2xl mx-auto mt-3 text-sm sm:text-base">
+            Dale play al casete para escuchar las canciones desde tu repositorio y haz clic en cada Polaroid para ver lo que hay detrás.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-20">
+          <div class="lg:col-span-5 flex flex-col items-center">
+            <div class="relative bg-stone-950/60 border border-amber-500/25 rounded-3xl p-6 w-full max-w-sm text-center shadow-2xl">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-[11px] font-space uppercase tracking-widest text-amber-300/80">Sesión Acústica</span>
+                <button id="relic-btn-3" onclick="collectRelic(3, 'Guitarra Acústica', 'Acorde de confianza: Para esas pláticas donde una buena canción acompaña todo lo que sentimos.', this)" class="px-2.5 py-1 rounded-full bg-amber-500/20 hover:bg-amber-500/35 border border-amber-400/40 text-xs font-space text-amber-200 flex items-center gap-1.5 cursor-pointer transition hover:scale-105">
+                  <span>🎸</span>
+                  <span>Reliquia</span>
+                </button>
+              </div>
+
+              <svg viewBox="0 0 260 320" class="w-56 h-auto mx-auto drop-shadow-[0_14px_24px_rgba(0,0,0,0.75)]" xmlns="http://www.w3.org/2000/svg">
+                <rect x="118" y="18" width="24" height="36" rx="5" fill="#451a03"/>
+                <circle cx="114" cy="27" r="3" fill="#fbbf24"/>
+                <circle cx="114" cy="36" r="3" fill="#fbbf24"/>
+                <circle cx="114" cy="45" r="3" fill="#fbbf24"/>
+                <circle cx="146" cy="27" r="3" fill="#fbbf24"/>
+                <circle cx="146" cy="36" r="3" fill="#fbbf24"/>
+                <circle cx="146" cy="45" r="3" fill="#fbbf24"/>
+                <rect x="123" y="52" width="14" height="96" fill="#291509"/>
+                <line x1="123" y1="68" x2="137" y2="68" stroke="#d97706" stroke-width="1"/>
+                <line x1="123" y1="86" x2="137" y2="86" stroke="#d97706" stroke-width="1"/>
+                <line x1="123" y1="104" x2="137" y2="104" stroke="#d97706" stroke-width="1"/>
+                <line x1="123" y1="122" x2="137" y2="122" stroke="#d97706" stroke-width="1"/>
+                <path d="M130 132 C95 132, 82 158, 94 184 C102 200, 96 208, 82 222 C64 242, 74 288, 130 288 C186 288, 196 242, 178 222 C164 208, 158 200, 166 184 C178 158, 165 132, 130 132 Z" fill="#b45309" stroke="#fde68a" stroke-width="2.5"/>
+                <path d="M130 138 C100 138, 89 160, 99 183 C106 198, 101 208, 88 221 C72 239, 81 281, 130 281 C179 281, 188 239, 172 221 C159 208, 154 198, 161 183 C171 160, 160 138, 130 138 Z" fill="#d97706"/>
+                <circle cx="130" cy="186" r="24" fill="#1c0d06" stroke="#fef3c7" stroke-width="3"/>
+                <rect x="108" y="242" width="44" height="10" rx="3" fill="#291509"/>
+                <line x1="112" y1="246" x2="148" y2="246" stroke="#fef3c7" stroke-width="2"/>
+                <line x1="125" y1="52" x2="120" y2="245" stroke="#fef3c7" stroke-width="0.9"/>
+                <line x1="128" y1="52" x2="126" y2="245" stroke="#fef3c7" stroke-width="0.9"/>
+                <line x1="132" y1="52" x2="134" y2="245" stroke="#fef3c7" stroke-width="0.9"/>
+                <line x1="135" y1="52" x2="140" y2="245" stroke="#fef3c7" stroke-width="0.9"/>
+                <circle cx="88" cy="202" r="7" fill="#fb923c"/>
+                <circle cx="88" cy="202" r="3" fill="#fef08a"/>
+                <circle cx="174" cy="234" r="7.5" fill="#f472b6"/>
+                <circle cx="174" cy="234" r="3" fill="#fef08a"/>
+              </svg>
+              <p class="font-playfair italic text-xs text-amber-200/90 mt-2">
+                "Dedicado a nuestras pláticas sin filtro"
+              </p>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7">
+            <div id="walkman-card" class="bg-stone-950/85 backdrop-blur-xl border-2 border-[#fce300] rounded-3xl p-6 sm:p-8 shadow-2xl transition-all duration-500">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-5">
+                <div class="flex items-center gap-2">
+                  <span id="cassette-status-dot" class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                  <span class="font-space text-xs uppercase tracking-widest text-amber-300 font-bold">
+                    WALKMAN MIXTAPE • GITHUB AUDIO
+                  </span>
+                </div>
+
+                <button id="relic-btn-2" onclick="collectRelic(2, 'Símbolo ||-// (Trench)', 'Pase lo que pase, cuentas con mi respaldo incondicional. Stay alive, Juls ||-//', this)" class="px-3 py-1 rounded-xl bg-[#fce300]/15 hover:bg-[#fce300]/30 border border-[#fce300]/60 text-[#fce300] font-space font-extrabold text-xs tracking-wider cursor-pointer transition hover:scale-105" title="Reliquia Twenty One Pilots">
+                  ||-//
+                </button>
+              </div>
+
+              <div id="cassette-shell" class="bg-gradient-to-br from-stone-800 via-stone-900 to-black border border-white/15 rounded-2xl p-5 mb-6 shadow-inner transition-colors duration-500">
+                <div class="bg-amber-100 text-stone-950 rounded-xl p-4 relative overflow-hidden">
+                  <div class="flex justify-between items-center border-b border-stone-900/20 pb-1.5 mb-2">
+                    <span class="font-space font-bold text-[10px] uppercase tracking-widest">C-90 • HIGH BIAS</span>
+                    <span id="track-badge" class="font-space font-bold text-[10px] px-2 py-0.5 rounded bg-stone-900 text-amber-300">PISTA 01</span>
+                  </div>
+                  <h3 id="cassette-title" class="font-syne font-extrabold text-lg sm:text-xl text-stone-950 truncate">
+                    My Blood — Twenty One Pilots
+                  </h3>
+                  <p id="cassette-subtitle" class="font-playfair italic text-xs text-stone-700 mt-0.5">
+                    "Quédate conmigo, no tienes que enfrentarlo sola."
+                  </p>
+
+                  <div class="mt-4 bg-stone-900 rounded-xl py-3 px-6 flex items-center justify-around border-2 border-stone-700">
+                    <div id="reel-left" class="w-12 h-12 rounded-full border-4 border-dashed border-amber-200/80 flex items-center justify-center bg-stone-950">
+                      <div class="w-4 h-4 rounded-full bg-amber-400"></div>
+                    </div>
+                    <div class="h-6 w-20 bg-amber-950/90 border-y border-amber-500/30 flex items-center justify-center">
+                      <span id="tape-wave" class="text-[10px] font-space text-amber-300 tracking-widest">❚❚ PAUSA</span>
+                    </div>
+                    <div id="reel-right" class="w-12 h-12 rounded-full border-4 border-dashed border-amber-200/80 flex items-center justify-center bg-stone-950">
+                      <div class="w-4 h-4 rounded-full bg-amber-400"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="track-lyric-box" class="bg-white/5 border border-white/10 rounded-2xl p-4 mb-5 text-sm text-amber-100/95 leading-relaxed">
+                <strong class="text-[#fce300] font-space">||-// Nota de lealtad:</strong> "Cuando todos se vayan y el mundo se ponga pesado, yo me quedo a cubrirte la espalda. Siempre."
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+                <button onclick="selectTrack(0)" id="track-btn-0" class="track-selector-btn p-3 rounded-xl border border-[#fce300] bg-[#fce300]/15 text-left transition cursor-pointer">
+                  <span class="block text-[10px] font-space uppercase text-[#fce300]">Pista 01 • Trench</span>
+                  <span class="font-syne font-bold text-xs text-white block truncate">My Blood — Twenty One Pilots</span>
+                </button>
+                <button onclick="selectTrack(1)" id="track-btn-1" class="track-selector-btn p-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 text-left transition cursor-pointer">
+                  <span class="block text-[10px] font-space uppercase text-amber-300">Pista 02 • Acústica</span>
+                  <span class="font-syne font-bold text-xs text-white block truncate">Canción 02 — Mixtape de Juli</span>
+                </button>
+              </div>
+
+              <div class="bg-stone-900 rounded-2xl p-4 border border-white/15 flex flex-col gap-3">
+                <div class="flex items-center justify-between text-xs font-space text-amber-300">
+                  <span id="audio-player-status">🎵 Reproductor GitHub Listo</span>
+                  <span id="audio-time">0:00 / 0:00</span>
+                </div>
+                
+                <audio id="direct-audio-element" preload="metadata" crossorigin="anonymous"></audio>
+
+                <div class="flex items-center gap-3">
+                  <button id="audio-play-btn" onclick="toggleDirectAudio()" class="py-2.5 px-5 rounded-xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-syne font-bold text-xs transition cursor-pointer flex items-center gap-2 shadow-lg">
+                    <span id="direct-play-icon">▶</span>
+                    <span id="direct-play-label">Reproducir Canción</span>
+                  </button>
+                  <div class="flex-1 bg-stone-800 h-2.5 rounded-full overflow-hidden cursor-pointer" onclick="seekAudio(event)">
+                    <div id="audio-progress-bar" class="bg-amber-400 h-full w-0 transition-all"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GALERÍA DE 5 POLAROIDS 3D GIRATORIAS -->
+        <div>
+          <div class="text-center mb-10">
+            <span class="text-xs font-space uppercase tracking-[0.2em] text-amber-300">Archivo Confidencial</span>
+            <h3 class="font-syne text-2xl sm:text-3xl font-bold text-white mt-1">
+              Nuestras 5 Polaroids (Haz clic para voltear cada una)
+            </h3>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            
+            <!-- Polaroid 1 -->
+            <div onclick="flipCard(this)" class="perspective-1000 h-[390px] cursor-pointer group">
+              <div class="preserve-3d relative w-full h-full">
+                <div class="backface-hidden absolute inset-0 bg-[#faf6f0] text-stone-900 p-4 pb-6 rounded-2xl shadow-2xl flex flex-col justify-between rotate-[-1.5deg] group-hover:rotate-0 transition-transform">
+                  <div class="relative w-full h-[280px] bg-stone-800 rounded-lg overflow-hidden">
+                    <img data-photo="1" src="foto1.jpeg" alt="Recuerdo 1 con Juls" class="w-full h-full object-cover object-top" onerror="tryNextPhotoPath(this, 1)" />
+                  </div>
+                  <div class="pt-3 flex items-center justify-between">
+                    <span class="font-playfair italic font-semibold text-base text-stone-800">Recuerdo #01</span>
+                    <span class="text-[11px] font-space text-stone-500">↻ Voltear</span>
+                  </div>
+                </div>
+                <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-amber-100 to-orange-100 text-stone-900 p-6 rounded-2xl shadow-2xl border-2 border-amber-400 flex flex-col justify-between">
+                  <div>
+                    <span class="text-[10px] font-space font-bold uppercase tracking-widest text-amber-800">Detrás de la foto • 01</span>
+                    <h4 class="font-syne font-bold text-xl text-stone-950 mt-1">Risas sin motivo aparente</h4>
+                    <p class="font-playfair italic text-base text-stone-800 mt-4 leading-relaxed">
+                      "Contigo cualquier día normal se convierte en anécdota de horas. Gracias por siempre seguirme el rollo en cada ocurrencia, Juls."
+                    </p>
+                  </div>
+                  <span class="text-xs font-space font-semibold text-amber-900">Toca para regresar ↺</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Polaroid 2 -->
+            <div onclick="flipCard(this)" class="perspective-1000 h-[390px] cursor-pointer group">
+              <div class="preserve-3d relative w-full h-full">
+                <div class="backface-hidden absolute inset-0 bg-[#faf6f0] text-stone-900 p-4 pb-6 rounded-2xl shadow-2xl flex flex-col justify-between rotate-[1.5deg] group-hover:rotate-0 transition-transform">
+                  <div class="relative w-full h-[280px] bg-stone-800 rounded-lg overflow-hidden">
+                    <img data-photo="2" src="foto2.jpeg" alt="Recuerdo 2 con Juli" class="w-full h-full object-cover object-center" onerror="tryNextPhotoPath(this, 2)" />
+                  </div>
+                  <div class="pt-3 flex items-center justify-between">
+                    <span class="font-playfair italic font-semibold text-base text-stone-800">Recuerdo #02</span>
+                    <span class="text-[11px] font-space text-stone-500">↻ Voltear</span>
+                  </div>
+                </div>
+                <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-amber-100 to-orange-100 text-stone-900 p-6 rounded-2xl shadow-2xl border-2 border-amber-400 flex flex-col justify-between">
+                  <div>
+                    <span class="text-[10px] font-space font-bold uppercase tracking-widest text-amber-800">Detrás de la foto • 02</span>
+                    <h4 class="font-syne font-bold text-xl text-stone-950 mt-1">Nuestro propio código</h4>
+                    <p class="font-playfair italic text-base text-stone-800 mt-4 leading-relaxed">
+                      "Nos volteamos a ver y ya sabemos exactamente qué estamos pensando. Ese código silencioso entre los dos vale oro."
+                    </p>
+                  </div>
+                  <span class="text-xs font-space font-semibold text-amber-900">Toca para regresar ↺</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Polaroid 3 -->
+            <div onclick="flipCard(this)" class="perspective-1000 h-[390px] cursor-pointer group">
+              <div class="preserve-3d relative w-full h-full">
+                <div class="backface-hidden absolute inset-0 bg-[#faf6f0] text-stone-900 p-4 pb-6 rounded-2xl shadow-2xl flex flex-col justify-between rotate-[-1deg] group-hover:rotate-0 transition-transform">
+                  <div class="relative w-full h-[280px] bg-stone-800 rounded-lg overflow-hidden">
+                    <img data-photo="3" src="foto3.jpeg" alt="Recuerdo 3 con Juls" class="w-full h-full object-cover object-top" onerror="tryNextPhotoPath(this, 3)" />
+                  </div>
+                  <div class="pt-3 flex items-center justify-between">
+                    <span class="font-playfair italic font-semibold text-base text-stone-800">Recuerdo #03</span>
+                    <span class="text-[11px] font-space text-stone-500">↻ Voltear</span>
+                  </div>
+                </div>
+                <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-amber-100 to-orange-100 text-stone-900 p-6 rounded-2xl shadow-2xl border-2 border-amber-400 flex flex-col justify-between">
+                  <div>
+                    <span class="text-[10px] font-space font-bold uppercase tracking-widest text-amber-800">Detrás de la foto • 03</span>
+                    <h4 class="font-syne font-bold text-xl text-stone-950 mt-1">Refugio sin decir nada</h4>
+                    <p class="font-playfair italic text-base text-stone-800 mt-4 leading-relaxed">
+                      "Has sido un refugio en silencio, aunque no lo hicieras con intención. Tenerte cerca hace que todo pese menos, Juli."
+                    </p>
+                  </div>
+                  <span class="text-xs font-space font-semibold text-amber-900">Toca para regresar ↺</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Polaroid 4 -->
+            <div onclick="flipCard(this)" class="perspective-1000 h-[390px] cursor-pointer group">
+              <div class="preserve-3d relative w-full h-full">
+                <div class="backface-hidden absolute inset-0 bg-[#faf6f0] text-stone-900 p-4 pb-6 rounded-2xl shadow-2xl flex flex-col justify-between rotate-[1.2deg] group-hover:rotate-0 transition-transform">
+                  <div class="relative w-full h-[280px] bg-stone-800 rounded-lg overflow-hidden">
+                    <img data-photo="4" src="foto4.jpeg" alt="Recuerdo 4 con Juli" class="w-full h-full object-cover object-top" onerror="tryNextPhotoPath(this, 4)" />
+                  </div>
+                  <div class="pt-3 flex items-center justify-between">
+                    <span class="font-playfair italic font-semibold text-base text-stone-800">Recuerdo #04</span>
+                    <span class="text-[11px] font-space text-stone-500">↻ Voltear</span>
+                  </div>
+                </div>
+                <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-amber-100 to-orange-100 text-stone-900 p-6 rounded-2xl shadow-2xl border-2 border-amber-400 flex flex-col justify-between">
+                  <div>
+                    <span class="text-[10px] font-space font-bold uppercase tracking-widest text-amber-800">Detrás de la foto • 04</span>
+                    <h4 class="font-syne font-bold text-xl text-stone-950 mt-1">Orgulloso de lo que avanzas</h4>
+                    <p class="font-playfair italic text-base text-stone-800 mt-4 leading-relaxed">
+                      "Verte crecer y cumplir metas es increíble. Si todo esto fue antes de los 18, lo que viene va a ser todavía mejor."
+                    </p>
+                  </div>
+                  <span class="text-xs font-space font-semibold text-amber-900">Toca para regresar ↺</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Polaroid 5 (NUEVA) -->
+            <div onclick="flipCard(this)" class="perspective-1000 h-[390px] cursor-pointer group sm:col-span-2 lg:col-span-1">
+              <div class="preserve-3d relative w-full h-full">
+                <div class="backface-hidden absolute inset-0 bg-[#faf6f0] text-stone-900 p-4 pb-6 rounded-2xl shadow-2xl flex flex-col justify-between rotate-[-1.2deg] group-hover:rotate-0 transition-transform">
+                  <div class="relative w-full h-[280px] bg-stone-800 rounded-lg overflow-hidden">
+                    <img data-photo="5" src="foto5.jpeg" alt="Recuerdo 5 con Juli" class="w-full h-full object-cover object-center" onerror="tryNextPhotoPath(this, 5)" />
+                  </div>
+                  <div class="pt-3 flex items-center justify-between">
+                    <span class="font-playfair italic font-semibold text-base text-stone-800">Recuerdo #05 • Nuevo</span>
+                    <span class="text-[11px] font-space text-stone-500">↻ Voltear</span>
+                  </div>
+                </div>
+                <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-amber-100 to-orange-100 text-stone-900 p-6 rounded-2xl shadow-2xl border-2 border-amber-400 flex flex-col justify-between">
+                  <div>
+                    <span class="text-[10px] font-space font-bold uppercase tracking-widest text-amber-800">Detrás de la foto • 05</span>
+                    <h4 class="font-syne font-bold text-xl text-stone-950 mt-1">Lo que está por venir</h4>
+                    <p class="font-playfair italic text-base text-stone-800 mt-4 leading-relaxed">
+                      "A pesar de que el futuro cambie cosas o estemos en distintos lugares, cuando nos veamos quiero que siga todo igual de real y divertido."
+                    </p>
+                  </div>
+                  <span class="text-xs font-space font-semibold text-amber-900">Toca para regresar ↺</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         5. SOLO "PALABRAS DESDE EL CORAZÓN" (3 SOBRES SELLADOS)
+    ========================================================== -->
+    <section id="palabras-corazon" class="relative py-24 px-4 sm:px-8 bg-gradient-to-b from-[#1e110d] via-[#140c0a] to-[#04241b] border-t border-amber-500/30 overflow-hidden">
+      <div class="max-w-5xl mx-auto relative z-10">
+        <div class="text-center mb-10">
+          <span class="text-xs font-space uppercase tracking-[0.2em] text-amber-300">Palabras Desde el Corazón</span>
+          <h2 class="font-syne text-2xl sm:text-4xl font-bold text-white mt-1">
+            3 Sobres Sellados para tus 18
+          </h2>
+          <p class="text-slate-300 text-sm mt-2">Toca cada sello de cera para romperlo y desplegar su carta.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-slate-950/85 border border-rose-400/30 rounded-3xl p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-space text-xs font-bold uppercase tracking-wider text-rose-300">Sobre 01 • El Tiempo</span>
+                <button onclick="openLetterEnvelope(1, this)" class="w-11 h-11 rounded-full bg-gradient-to-br from-rose-500 to-red-800 border-2 border-rose-300/70 text-white font-playfair font-bold text-sm shadow-lg hover:scale-110 transition cursor-pointer flex items-center justify-center" title="Romper sello">
+                  I
+                </button>
+              </div>
+              <h3 class="font-syne font-bold text-lg text-white mb-3">¿En qué momento crecimos tanto?</h3>
+              <div id="letter-content-1" class="hidden">
+                <p class="font-playfair italic text-sm text-slate-200 leading-relaxed bg-white/5 p-4 rounded-2xl border border-white/10">
+                  "Parece que fue ayer cuando nos reíamos de cualquier tontería sin preocuparnos por nada, y mírate hoy: cumpliendo 18 años. El tiempo pasó volando, Juls, pero ver la persona increíble en la que te has convertido hace que cada etapa haya valido la pena."
+                </p>
+              </div>
+              <p id="letter-placeholder-1" class="text-xs font-space text-slate-400 italic py-6 text-center border border-dashed border-white/15 rounded-2xl">
+                🔒 Toca el sello rojo para abrir esta carta
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-slate-950/85 border border-amber-400/30 rounded-3xl p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-space text-xs font-bold uppercase tracking-wider text-amber-300">Sobre 02 • Tu Fortaleza</span>
+                <button onclick="openLetterEnvelope(2, this)" class="w-11 h-11 rounded-full bg-gradient-to-br from-amber-400 to-amber-700 border-2 border-amber-200/80 text-slate-950 font-playfair font-bold text-sm shadow-lg hover:scale-110 transition cursor-pointer flex items-center justify-center" title="Romper sello">
+                  II
+                </button>
+              </div>
+              <h3 class="font-syne font-bold text-lg text-white mb-3">Más capaz de lo que imaginas</h3>
+              <div id="letter-content-2" class="hidden">
+                <p class="font-playfair italic text-sm text-slate-200 leading-relaxed bg-white/5 p-4 rounded-2xl border border-white/10">
+                  "Admiro muchísimo tu forma de levantarte incluso en los días pesados. A veces dudas de ti misma, Juli, pero yo que te veo desde fuera sé perfectamente de lo que eres capaz: tienes una fuerza y un corazón gigantes que pueden con cualquier reto."
+                </p>
+              </div>
+              <p id="letter-placeholder-2" class="text-xs font-space text-slate-400 italic py-6 text-center border border-dashed border-white/15 rounded-2xl">
+                🔒 Toca el sello dorado para abrir esta carta
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-slate-950/85 border border-orange-400/30 rounded-3xl p-6 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-space text-xs font-bold uppercase tracking-wider text-orange-300">Sobre 03 • Nuestro Futuro</span>
+                <button onclick="openLetterEnvelope(3, this)" class="w-11 h-11 rounded-full bg-gradient-to-br from-orange-500 to-amber-800 border-2 border-orange-300/70 text-white font-playfair font-bold text-sm shadow-lg hover:scale-110 transition cursor-pointer flex items-center justify-center" title="Romper sello">
+                  III
+                </button>
+              </div>
+              <h3 class="font-syne font-bold text-lg text-white mb-3">Lo mejor apenas comienza</h3>
+              <div id="letter-content-3" class="hidden">
+                <p class="font-playfair italic text-sm text-slate-200 leading-relaxed bg-white/5 p-4 rounded-2xl border border-white/10">
+                  "Nos faltan viajes por tachar de la lista, miles de pláticas improvisadas, conquistas y seguir celebrando cada cumpleaños juntos. Pase lo que pase en el futuro, mi lugar como tu mejor amigo ya está apartado de por vida."
+                </p>
+              </div>
+              <p id="letter-placeholder-3" class="text-xs font-space text-slate-400 italic py-6 text-center border border-dashed border-white/15 rounded-2xl">
+                🔒 Toca el sello naranja para abrir esta carta
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         6. SANTUARIO DE TORTUGAS, FRASCO & REGALO FINAL
+    ========================================================== -->
+    <section id="mundo-tortugas" class="relative pt-24 pb-28 px-4 sm:px-8 bg-gradient-to-b from-[#04241b] via-[#06382b] to-[#02140f] border-t border-emerald-500/30 overflow-hidden">
+      <div class="absolute inset-0 water-rays pointer-events-none"></div>
+
+      <div class="max-w-5xl mx-auto relative z-10">
+        <div class="text-center mb-12">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/35 text-emerald-200 font-space text-xs uppercase tracking-[0.2em] mb-3">
+            Santuario Submarino & Cofre Final
+          </span>
+          <h2 class="font-syne text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+            Tu refugio de calma, <span class="text-emerald-300">Juli</span>
+          </h2>
+          <p class="text-emerald-100/80 max-w-2xl mx-auto mt-3 text-sm sm:text-base">
+            Toca el agua para guiar a las tortugas y haz clic en la Tortuga Dorada para atrapar la última reliquia.
+          </p>
+        </div>
+
+        <div class="mb-16">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3 px-1">
+            <span class="text-xs font-space text-emerald-200 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              Haz clic en cualquier parte del agua para llamar a las tortugas y soltar burbujas
+            </span>
+            <span class="text-xs font-space text-amber-300 font-semibold">
+              ✨ Pista: Busca la Tortuga Dorada nadando en el arrecife
+            </span>
+          </div>
+
+          <div id="aquarium-container" onclick="guideTurtles(event)" class="relative w-full h-[360px] sm:h-[410px] rounded-3xl bg-gradient-to-b from-teal-900/85 via-emerald-950/90 to-[#021c15] border-2 border-emerald-400/35 shadow-[inset_0_0_60px_rgba(6,78,59,0.9),0_20px_50px_rgba(0,0,0,0.65)] overflow-hidden cursor-pointer select-none">
+            <div class="absolute -top-10 left-1/4 w-36 h-80 bg-emerald-300/10 rotate-12 blur-xl pointer-events-none"></div>
+            <div class="absolute -top-10 right-1/3 w-44 h-80 bg-teal-200/10 -rotate-12 blur-xl pointer-events-none"></div>
+
+            <svg viewBox="0 0 1000 120" class="absolute bottom-0 left-0 right-0 w-full h-24 pointer-events-none opacity-80" preserveAspectRatio="none">
+              <path d="M0,120 L0,90 Q150,70 300,92 T650,82 Q820,68 1000,90 L1000,120 Z" fill="#022c22"/>
+              <path d="M90,115 Q82,80 96,55 Q108,82 100,115" fill="#059669"/>
+              <path d="M115,115 Q125,75 110,48 Q98,78 108,115" fill="#10b981"/>
+              <path d="M840,115 Q832,75 848,45 Q860,78 850,115" fill="#059669"/>
+              <path d="M875,115 Q888,82 872,58 Q860,84 868,115" fill="#34d399"/>
+              <circle cx="510" cy="96" r="14" fill="#047857"/>
+              <circle cx="528" cy="100" r="10" fill="#065f46"/>
+            </svg>
+
+            <div id="swim-turtle-1" class="absolute transition-all duration-[2200ms] ease-out pointer-events-none" style="left: 18%; top: 34%;">
+              <svg width="78" height="54" viewBox="0 0 90 60" class="drop-shadow-lg">
+                <ellipse cx="52" cy="14" rx="14" ry="6" transform="rotate(-25 52 14)" fill="#34d399"/>
+                <ellipse cx="52" cy="46" rx="14" ry="6" transform="rotate(25 52 46)" fill="#34d399"/>
+                <ellipse cx="22" cy="18" rx="9" ry="4" transform="rotate(-35 22 18)" fill="#10b981"/>
+                <ellipse cx="22" cy="42" rx="9" ry="4" transform="rotate(35 22 42)" fill="#10b981"/>
+                <ellipse cx="74" cy="30" rx="11" ry="8" fill="#6ee7b7"/>
+                <circle cx="77" cy="27" r="1.8" fill="#022c22"/>
+                <ellipse cx="42" cy="30" rx="26" ry="18" fill="#059669" stroke="#a7f3d0" stroke-width="2"/>
+                <polygon points="42,16 52,24 48,36 36,36 32,24" fill="#047857" stroke="#6ee7b7" stroke-width="1"/>
+              </svg>
+            </div>
+
+            <div id="swim-turtle-2" class="absolute transition-all duration-[2600ms] ease-out pointer-events-none" style="left: 62%; top: 55%;">
+              <svg width="66" height="46" viewBox="0 0 90 60" class="drop-shadow-lg">
+                <ellipse cx="52" cy="14" rx="14" ry="6" transform="rotate(-25 52 14)" fill="#2dd4bf"/>
+                <ellipse cx="52" cy="46" rx="14" ry="6" transform="rotate(25 52 46)" fill="#2dd4bf"/>
+                <ellipse cx="22" cy="18" rx="9" ry="4" transform="rotate(-35 22 18)" fill="#14b8a6"/>
+                <ellipse cx="22" cy="42" rx="9" ry="4" transform="rotate(35 22 42)" fill="#14b8a6"/>
+                <ellipse cx="74" cy="30" rx="11" ry="8" fill="#5eead4"/>
+                <circle cx="77" cy="27" r="1.8" fill="#042f2e"/>
+                <ellipse cx="42" cy="30" rx="26" ry="18" fill="#0d9488" stroke="#99f6e4" stroke-width="2"/>
+                <polygon points="42,16 52,24 48,36 36,36 32,24" fill="#0f766e" stroke="#5eead4" stroke-width="1"/>
+              </svg>
+            </div>
+
+            <button id="relic-btn-4" onclick="event.stopPropagation(); collectRelic(4, 'Tortuga Dorada del Santuario', 'Sin prisa pero sin pausa, Juli. Cada paso a tu propio ritmo te lleva exactamente a donde tienes que llegar.', this)" class="absolute transition-all duration-[2400ms] ease-out cursor-pointer hover:scale-125 focus:outline-none z-20" style="left: 44%; top: 24%;" title="¡Tortuga Dorada! Haz clic para atrapar la reliquia">
+              <svg width="84" height="58" viewBox="0 0 90 60" class="drop-shadow-[0_0_16px_rgba(250,204,21,0.9)]">
+                <ellipse cx="52" cy="14" rx="14" ry="6" transform="rotate(-25 52 14)" fill="#fde047"/>
+                <ellipse cx="52" cy="46" rx="14" ry="6" transform="rotate(25 52 46)" fill="#fde047"/>
+                <ellipse cx="22" cy="18" rx="9" ry="4" transform="rotate(-35 22 18)" fill="#facc15"/>
+                <ellipse cx="22" cy="42" rx="9" ry="4" transform="rotate(35 22 42)" fill="#facc15"/>
+                <ellipse cx="74" cy="30" rx="11" ry="8" fill="#fef08a"/>
+                <circle cx="77" cy="27" r="2" fill="#451a03"/>
+                <ellipse cx="42" cy="30" rx="26" ry="18" fill="#eab308" stroke="#fef9c3" stroke-width="2.5"/>
+                <polygon points="42,16 52,24 48,36 36,36 32,24" fill="#ca8a04" stroke="#fef08a" stroke-width="1.2"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-emerald-950/75 backdrop-blur-xl border border-emerald-400/30 rounded-3xl p-6 sm:p-9 mb-20 shadow-2xl">
+          <div class="text-center mb-7">
+            <span class="text-xs font-space uppercase tracking-[0.2em] text-emerald-300">Botiquín Emocional de Bolsillo</span>
+            <h3 class="font-syne text-2xl sm:text-3xl font-bold text-white mt-1">
+              Frasco de Emociones: "Ábrelo cuando..."
+            </h3>
+            <p class="text-emerald-100/75 text-sm mt-1">Elige cómo te sientes hoy y saca una nota escrita especialmente para ti:</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-6">
+            <button onclick="openEmotionJar(0)" class="emotion-btn p-4 rounded-2xl bg-emerald-900/60 hover:bg-emerald-800/80 border border-emerald-400/30 text-left transition cursor-pointer">
+              <span class="text-2xl block mb-1.5">🌙</span>
+              <span class="font-syne font-bold text-sm text-white block">Cuando quieras un momento de paz</span>
+            </button>
+
+            <button onclick="openEmotionJar(1)" class="emotion-btn p-4 rounded-2xl bg-emerald-900/60 hover:bg-emerald-800/80 border border-emerald-400/30 text-left transition cursor-pointer">
+              <span class="text-2xl block mb-1.5">🎸</span>
+              <span class="font-syne font-bold text-sm text-white block">Cuando traigas la intensidad a tope</span>
+            </button>
+
+            <button onclick="openEmotionJar(2)" class="emotion-btn p-4 rounded-2xl bg-emerald-900/60 hover:bg-emerald-800/80 border border-emerald-400/30 text-left transition cursor-pointer">
+              <span class="text-2xl block mb-1.5">🍷</span>
+              <span class="font-syne font-bold text-sm text-white block">Cuando sea hora de reírnos de todo</span>
+            </button>
+
+            <button onclick="openEmotionJar(3)" class="emotion-btn p-4 rounded-2xl bg-emerald-900/60 hover:bg-emerald-800/80 border border-emerald-400/30 text-left transition cursor-pointer">
+              <span class="text-2xl block mb-1.5">🫂</span>
+              <span class="font-syne font-bold text-sm text-white block">Cuando necesites recordarte lo capaz que eres</span>
+            </button>
+          </div>
+
+          <div id="emotion-card-display" class="bg-[#031b14] border border-emerald-300/35 rounded-2xl p-6 text-center transition-all">
+            <span id="emotion-card-tag" class="text-[11px] font-space uppercase tracking-widest text-emerald-300 font-bold">
+              🌙 Modo Tortuga Zen
+            </span>
+            <p id="emotion-card-text" class="font-playfair italic text-base sm:text-lg text-emerald-50 mt-2 max-w-2xl mx-auto leading-relaxed">
+              "Respira hondo, Juls. No tienes que resolver toda tu vida adulta hoy mismo; avanza a tu propio ritmo, como tortuga en corriente tranquila, que vas exactamente bien."
+            </p>
+          </div>
+        </div>
+
+        <!-- REGALO FINAL -->
+        <div class="text-center max-w-xl mx-auto">
+          <span class="inline-block px-3.5 py-1 rounded-full bg-amber-400/20 border border-amber-300/40 text-amber-300 font-space text-xs uppercase tracking-[0.25em] mb-3">
+            Gran Final • Regalo Desbloqueable
+          </span>
+          <h3 class="font-syne text-2xl sm:text-4xl font-extrabold text-white mb-2">
+            Un último detalle para ti, Juli
+          </h3>
+          <p class="text-emerald-100/80 text-sm mb-10">
+            Toca la caja dorada para abrir la carta final de tu cumpleaños número 18.
+          </p>
+
+          <div class="flex justify-center">
+            <button onclick="openFinalGiftBox()" aria-label="Abrir caja sorpresa dorada" class="group relative w-44 h-44 flex flex-col items-center justify-center cursor-pointer animate-wiggle focus:outline-none">
+              <div class="absolute inset-2 bg-amber-400/30 blur-2xl rounded-full group-hover:bg-amber-400/55 transition-all"></div>
+
+              <div class="relative z-20 flex items-center justify-center -mb-2">
+                <div class="w-10 h-7 rounded-full border-4 border-amber-200 bg-amber-400 -rotate-12"></div>
+                <div class="w-5 h-5 rounded-full bg-amber-200 z-10 -mx-1 shadow"></div>
+                <div class="w-10 h-7 rounded-full border-4 border-amber-200 bg-amber-400 rotate-12"></div>
+              </div>
+
+              <div class="relative z-10 w-40 h-9 rounded-xl bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-500 border-2 border-amber-100 shadow-xl flex items-center justify-center group-hover:-translate-y-3 transition-transform duration-300">
+                <div class="w-7 h-full bg-rose-600/90"></div>
+              </div>
+
+              <div class="relative w-36 h-28 rounded-b-2xl bg-gradient-to-b from-amber-400 via-amber-500 to-yellow-600 border-x-2 border-b-2 border-amber-200 shadow-2xl flex items-center justify-center overflow-hidden">
+                <div class="w-7 h-full bg-rose-600/90"></div>
+                <span class="absolute bottom-2 right-2.5 font-space font-extrabold text-[10px] text-amber-950/80">18 VIP</span>
+              </div>
+
+              <span class="mt-4 font-space font-bold text-xs uppercase tracking-widest text-amber-300 group-hover:text-white transition">
+                ✨ Tocar para abrir ✨
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-[#020a08] border-t border-white/10 py-8 px-4 text-center">
+      <p class="font-space text-xs text-slate-400">
+        Hecho con cariño para celebrar los 18 años de <span class="text-amber-300 font-semibold">Juls</span> • Edición Limitada.
+      </p>
+    </footer>
+  </main>
+
+  <!-- =========================================================
+       MODAL CARTA FINAL ("Esto es para ti")
+  ========================================================== -->
+  <div id="final-letter-modal" class="fixed inset-0 z-[115] hidden items-center justify-center bg-black/85 backdrop-blur-md p-4 overflow-y-auto">
+    <div class="relative max-w-2xl w-full bg-[#fffdf8] text-slate-900 rounded-3xl p-6 sm:p-10 border-4 border-amber-400 shadow-[0_0_70px_rgba(251,191,36,0.5)] my-8">
+      <button onclick="closeModal('final-letter-modal')" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold flex items-center justify-center cursor-pointer transition" aria-label="Cerrar carta">
+        ✕
+      </button>
+
+      <div class="border-b-2 border-amber-300/70 pb-5 mb-6">
+        <span class="inline-block px-3 py-1 rounded-full bg-amber-100 border border-amber-400 text-amber-900 font-space font-bold text-[11px] uppercase tracking-widest mb-2">
+          Carta Oficial • Capítulo 18
+        </span>
+        <h2 class="font-playfair font-bold text-2xl sm:text-4xl text-slate-950">
+          Esto es para ti
+        </h2>
+        <p class="mt-2 text-xs sm:text-sm font-space text-amber-900 bg-amber-100/80 border border-amber-300 rounded-xl px-3.5 py-2 italic">
+          Julieta Arzalus Soto (nota oficial: es pura broma lo de Soto, Juls, claro que me acuerdo perfectamente de que tu apellido paterno es García, pero ya es nuestro clásico jajaja).
+        </p>
+      </div>
+
+      <div class="space-y-4 font-playfair text-base sm:text-lg text-slate-800 leading-relaxed">
+        <p>
+          Juls, sabes que es raro —o eso creo— que hable de sentimientos o de que quiero a alguien. Mi forma de decir «aquí estoy» es mandarte reels a las 3 de la mañana, preguntarte qué haces, cómo te sientes y burlarme de ti. Ese es mi código, y creo que no necesita explicación.
+        </p>
+        <p class="font-semibold text-slate-950 text-lg sm:text-xl bg-amber-100/70 border-l-4 border-amber-500 pl-4 py-2 rounded-r-xl">
+          Pero hoy quiero romper ese código y decirlo directo: te quiero.
+        </p>
+        <p>
+          Has sido mi refugio en silencio, aunque no lo hicieras con intención. Eres parte de todos mis recuerdos que nunca quiero olvidar. A pesar de que el futuro cambie las cosas, de que estemos en diferentes ciudades o de que la vida nos lleve por caminos distintos, quiero que cuando nos veamos años después siga todo igual: que volvamos a burlarnos como siempre lo hemos hecho y creemos muchos más recuerdos de los que ya tenemos.
+        </p>
+        <p>
+          No está de más decirte que eres una de las personas que más me importan. Aunque llevemos relativamente poco tiempo de conocernos, te has vuelto alguien en quien puedo confiar, sin importar qué tanto haya hecho o qué no haya hecho. Por todo eso, muchas gracias, amigo.
+        </p>
+      </div>
+
+      <div class="mt-8 pt-5 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <span class="font-playfair italic text-slate-600 text-sm block">Felices 18,</span>
+          <span class="font-syne font-extrabold text-base text-slate-950">Tu mejor amigo</span>
+        </div>
+        <button onclick="launchConfettiBurst(120)" class="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-syne font-bold text-xs sm:text-sm transition cursor-pointer shadow">
+          🎉 Celebrar con más confeti
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let audioCtx = null;
+    function getAudioCtx() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContext();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playSynthChime(freqs = [523.25, 659.25, 783.99, 1046.5], duration = 0.45, type = 'sine') {
+      try {
+        const ctx = getAudioCtx();
+        freqs.forEach((f, idx) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = type;
+          osc.frequency.setValueAtTime(f, ctx.currentTime + idx * 0.07);
+
+          gain.gain.setValueAtTime(0.001, ctx.currentTime + idx * 0.07);
+          gain.gain.exponentialRampToValueAtTime(0.09, ctx.currentTime + idx * 0.07 + 0.04);
+          gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + idx * 0.07 + duration);
+
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(ctx.currentTime + idx * 0.07);
+          osc.stop(ctx.currentTime + idx * 0.07 + duration + 0.05);
+        });
+      } catch (e) {}
+    }
+
+    /* -----------------------------------------------------------
+       COREOGRAFÍA DE LA CINEMÁTICA DE ENTRADA
+    ------------------------------------------------------------ */
+    let cineTimers = [];
+    let cineCompleted = false;
+
+    function startOpeningCinematic() {
+      const t1 = document.getElementById('cine-turtle-greeter');
+      const t2 = document.getElementById('cine-turtle-2');
+      const t3 = document.getElementById('cine-turtle-3');
+      const bubble = document.getElementById('turtle-hello-bubble');
+      const flipper = document.getElementById('greeter-front-flipper');
+      const convoy = document.getElementById('giant-convoy');
+      const statusText = document.getElementById('cine-status-text');
+      const skipBtn = document.getElementById('skip-cine-btn');
+      if (!t1 || !convoy) return;
+
+      cineTimers.push(setTimeout(() => {
+        if (statusText) statusText.textContent = 'Escena 01 • Unas visitas llegan...';
+        t1.style.left = '26%';
+        t2.style.left = '15%';
+        t3.style.left = '8%';
+      }, 400));
+
+      cineTimers.push(setTimeout(() => {
+        if (statusText) statusText.textContent = 'Escena 02 • Un saludo especial';
+        t1.style.left = '43%';
+        t1.style.bottom = '132px';
+        t1.style.transform = 'scale(1.42)';
+        setTimeout(() => {
+          if (bubble) bubble.classList.remove('hidden');
+          if (flipper) flipper.classList.add('waving-hello');
+          playSynthChime([659.25, 880], 0.3, 'sine');
+        }, 700);
+      }, 2000));
+
+      cineTimers.push(setTimeout(() => {
+        if (statusText) statusText.textContent = 'Escena 03 • Esperando la gran entrega...';
+        if (bubble) bubble.classList.add('hidden');
+        if (flipper) flipper.classList.remove('waving-hello');
+        t1.style.left = '68%';
+        t1.style.bottom = '76px';
+        t1.style.transform = 'scale(1) scaleX(-1)';
+
+        t2.style.left = '78%';
+        t2.style.transform = 'scaleX(-1)';
+
+        t3.style.left = '85%';
+        t3.style.transform = 'scaleX(-1)';
+      }, 4400));
+
+      cineTimers.push(setTimeout(() => {
+        if (statusText) statusText.textContent = 'Escena Final • Entrega Especial';
+        convoy.style.left = window.innerWidth < 640 ? '3%' : '11%';
+      }, 5900));
+
+      cineTimers.push(setTimeout(() => {
+        finishCinematicArrival();
+        if (skipBtn) skipBtn.classList.add('hidden');
+      }, 8700));
+    }
+
+    function finishCinematicArrival() {
+      if (cineCompleted) return;
+      cineCompleted = true;
+      document.querySelectorAll('.turtle-bob, .flipper-front, .flipper-back').forEach(el => {
+        el.style.animation = 'none';
+      });
+      const finalPrompt = document.getElementById('cine-final-prompt');
+      if (finalPrompt) finalPrompt.classList.remove('opacity-0');
+    }
+
+    function fastForwardCinematic() {
+      cineTimers.forEach(id => clearTimeout(id));
+      const t1 = document.getElementById('cine-turtle-greeter');
+      const t2 = document.getElementById('cine-turtle-2');
+      const t3 = document.getElementById('cine-turtle-3');
+      const bubble = document.getElementById('turtle-hello-bubble');
+      const flipper = document.getElementById('greeter-front-flipper');
+      const convoy = document.getElementById('giant-convoy');
+      const skipBtn = document.getElementById('skip-cine-btn');
+
+      if (bubble) bubble.classList.add('hidden');
+      if (flipper) flipper.classList.remove('waving-hello');
+      if (t1) { t1.style.left = '68%'; t1.style.bottom = '76px'; t1.style.transform = 'scale(1) scaleX(-1)'; }
+      if (t2) { t2.style.left = '78%'; t2.style.transform = 'scaleX(-1)'; }
+      if (t3) { t3.style.left = '85%'; t3.style.transform = 'scaleX(-1)'; }
+      if (convoy) { convoy.style.transitionDuration = '500ms'; convoy.style.left = window.innerWidth < 640 ? '3%' : '11%'; }
+      if (skipBtn) skipBtn.classList.add('hidden');
+      setTimeout(finishCinematicArrival, 550);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', startOpeningCinematic);
+    } else {
+      startOpeningCinematic();
+    }
+
+    /* -----------------------------------------------------------
+       DETECCIÓN AUTOMÁTICA DE 5 FOTOS EN GITHUB
+    ------------------------------------------------------------ */
+    const photoCandidates = {
+      1: ['foto1.jpeg', 'foto1.jpg', 'media/foto1.jpeg', 'media/foto1.jpg', 'assets/foto1.jpeg', 'images/foto1.jpeg'],
+      2: ['foto2.jpeg', 'foto2.jpg', 'media/foto2.jpeg', 'media/foto2.jpg', 'assets/foto2.jpeg', 'images/foto2.jpeg'],
+      3: ['foto3.jpeg', 'foto3.jpg', 'media/foto3.jpeg', 'media/foto3.jpg', 'assets/foto3.jpeg', 'images/foto3.jpeg'],
+      4: ['foto4.jpeg', 'foto4.jpg', 'media/foto4.jpeg', 'media/foto4.jpg', 'assets/foto4.jpeg', 'images/foto4.jpeg'],
+      5: ['foto5.jpeg', 'foto5.jpg', 'media/foto5.jpeg', 'media/foto5.jpg', 'assets/foto5.jpeg', 'images/foto5.jpeg']
+    };
+
+    function tryNextPhotoPath(imgEl, photoNum) {
+      const list = photoCandidates[photoNum] || [];
+      let attempt = parseInt(imgEl.dataset.attempt || '0', 10) + 1;
+      if (attempt < list.length) {
+        imgEl.dataset.attempt = attempt;
+        imgEl.src = list[attempt];
+      } else {
+        imgEl.onerror = null;
+      }
+    }
+
+    /* -----------------------------------------------------------
+       CONFETTI & RELIQUIAS (4 RELIQUIAS TOTALES)
+    ------------------------------------------------------------ */
+    const confettiCanvas = document.getElementById('confetti-canvas');
+    const cCtx = confettiCanvas.getContext('2d');
+    let confettiParticles = [];
+    let confettiAnimating = false;
+
+    function resizeConfetti() {
+      confettiCanvas.width = window.innerWidth;
+      confettiCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeConfetti);
+    resizeConfetti();
+
+    function launchConfettiBurst(count = 100) {
+      const colors = ['#facc15', '#ec4899', '#818cf8', '#34d399', '#fb923c', '#ffffff'];
+      for (let i = 0; i < count; i++) {
+        confettiParticles.push({
+          x: window.innerWidth * (0.2 + Math.random() * 0.6),
+          y: window.innerHeight * 0.45,
+          vx: (Math.random() - 0.5) * 16,
+          vy: (Math.random() - 0.85) * 18,
+          size: 6 + Math.random() * 6,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          rotation: Math.random() * 360,
+          vRot: (Math.random() - 0.5) * 12,
+          gravity: 0.35 + Math.random() * 0.15,
+          alpha: 1
+        });
+      }
+      if (!confettiAnimating) {
+        confettiAnimating = true;
+        animateConfetti();
+      }
+    }
+
+    function animateConfetti() {
+      cCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+      confettiParticles.forEach((p) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += p.gravity;
+        p.vx *= 0.99;
+        p.rotation += p.vRot;
+        p.alpha -= 0.008;
+
+        cCtx.save();
+        cCtx.globalAlpha = Math.max(0, p.alpha);
+        cCtx.translate(p.x, p.y);
+        cCtx.rotate((p.rotation * Math.PI) / 180);
+        cCtx.fillStyle = p.color;
+        cCtx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+        cCtx.restore();
+      });
+
+      confettiParticles = confettiParticles.filter((p) => p.alpha > 0 && p.y < confettiCanvas.height + 30);
+
+      if (confettiParticles.length > 0) {
+        requestAnimationFrame(animateConfetti);
+      } else {
+        confettiAnimating = false;
+      }
+    }
+
+    function showToast(title, message, accentClass = 'border-amber-400 text-amber-300') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = `pointer-events-auto bg-slate-950/95 backdrop-blur-xl border-l-4 ${accentClass} border border-white/15 rounded-2xl p-4 shadow-2xl transform transition-all duration-300 translate-y-4 opacity-0`;
+      toast.innerHTML = `
+        <div class="flex items-start justify-between gap-2">
+          <strong class="font-syne text-sm block">${title}</strong>
+          <button onclick="this.parentElement.parentElement.remove()" class="text-slate-400 hover:text-white text-xs cursor-pointer">✕</button>
+        </div>
+        <p class="text-slate-200 text-xs mt-1 leading-relaxed">${message}</p>
+      `;
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-4', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 350);
+      }, 5200);
+    }
+
+    const collectedRelics = new Set();
+    const TOTAL_RELICS = 4;
+
+    function collectRelic(id, name, message, el) {
+      playSynthChime([587.33, 739.99, 880, 1174.66], 0.55, 'triangle');
+
+      if (!collectedRelics.has(id)) {
+        collectedRelics.add(id);
+        if (el) el.classList.add('relic-found');
+
+        const hudIcon = document.getElementById(`hud-relic-${id}`);
+        if (hudIcon) {
+          hudIcon.classList.remove('opacity-40', 'bg-white/5', 'border-white/10');
+          hudIcon.classList.add('opacity-100', 'bg-amber-400/25', 'border-amber-300', 'text-amber-300', 'scale-110', 'shadow-[0_0_12px_rgba(250,204,21,0.6)]');
+        }
+
+        const badge = document.getElementById('relic-counter-badge');
+        badge.textContent = `${collectedRelics.size}/${TOTAL_RELICS} Easter Eggs`;
+
+        showToast(`✨ Reliquia #${id}: ${name}`, message, 'border-amber-400 text-amber-300');
+
+        if (collectedRelics.size === TOTAL_RELICS) {
+          setTimeout(() => {
+            launchConfettiBurst(160);
+            playSynthChime([523.25, 659.25, 783.99, 1046.5, 1318.5], 0.8, 'sine');
+            openModal('master-explorer-modal');
+          }, 900);
+        }
+      } else {
+        showToast(`⭐ Ya tienes: ${name}`, message, 'border-indigo-400 text-indigo-300');
+      }
+    }
+
+    function scrollToSection(id) {
+      const target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    let envelopeOpened = false;
+    function openEnvelope() {
+      if (envelopeOpened) return;
+      envelopeOpened = true;
+      finishCinematicArrival();
+
+      playSynthChime([440, 554.37, 659.25, 880], 0.7, 'sine');
+      const env = document.getElementById('sealed-envelope');
+      env.classList.add('envelope-open');
+
+      setTimeout(() => {
+        launchConfettiBurst(130);
+      }, 450);
+
+      setTimeout(() => {
+        const overlay = document.getElementById('intro-overlay');
+        overlay.classList.add('opacity-0', 'pointer-events-none', 'scale-105');
+        document.getElementById('main-content').classList.remove('opacity-0');
+
+        const hud = document.getElementById('hud-bar');
+        hud.classList.remove('-translate-y-full', 'opacity-0');
+      }, 1600);
+    }
+
+    /* -----------------------------------------------------------
+       MONEDA BOJACK HORSEMAN
+    ------------------------------------------------------------ */
+    const bojackImages = [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBj9gTlWyKiVhKRl2OHDwzr5G8DysbqjPerjLH5W3K2Q&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRla-cmLRt_-FF37RFMTT4sEdTy0QNI3o4-jVraAOvgKg&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDy_0oRPqSWZp6CvjDl_ryZ39OK4R1L9BIlfmYegOUCA&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT20LMkQwZ79JmBiVoSBFyFIoVzjFO1LTeoaIKA-13yLQ&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOYtxdrgIBeuMSxp4Eb3Xd8ewnHKKy8zZ6LcvVmVD0ew&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjPJEECEev2wA_qZUdlceFVMJnwv046UeDkYXU2cWSSQ&s=10"
+    ];
+    let bojackCoinIdx = 0;
+
+    function flipBojackCoin() {
+      const btn = document.getElementById('bojack-coin-btn');
+      const img = document.getElementById('bojack-coin-img');
+      const counter = document.getElementById('bojack-coin-counter');
+
+      playSynthChime([987.77, 1318.51], 0.3, 'triangle');
+
+      btn.classList.remove('coin-flipping');
+      void btn.offsetWidth;
+      btn.classList.add('coin-flipping');
+
+      setTimeout(() => {
+        bojackCoinIdx = (bojackCoinIdx + 1) % bojackImages.length;
+        img.src = bojackImages[bojackCoinIdx];
+        counter.textContent = `${bojackCoinIdx + 1} / ${bojackImages.length}`;
+      }, 280);
+    }
+
+    /* -----------------------------------------------------------
+       LETRERO HOLLYWOO -> JULIETA 18
+    ------------------------------------------------------------ */
+    const hollywooPairs = [
+      { orig: 'H', alt: 'J' },
+      { orig: 'O', alt: 'U' },
+      { orig: 'L', alt: 'L' },
+      { orig: 'L', alt: 'I' },
+      { orig: 'Y', alt: 'E' },
+      { orig: 'W', alt: 'T' },
+      { orig: 'O', alt: 'A' },
+      { orig: 'O', alt: '18' }
+    ];
+    let allTransformed = false;
+
+    function initHollywooSign() {
+      const container = document.getElementById('hollywoo-sign');
+      hollywooPairs.forEach((pair, idx) => {
+        const span = document.createElement('button');
+        span.type = 'button';
+        span.dataset.index = idx;
+        span.dataset.transformed = 'false';
+        span.textContent = pair.orig;
+        span.className = 'hollywoo-letter font-syne font-extrabold text-3xl sm:text-5xl md:text-6xl px-2.5 sm:px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 text-white cursor-pointer';
+
+        const activateLetter = () => {
+          span.textContent = pair.alt;
+          span.dataset.transformed = 'true';
+          span.classList.add('active-juli');
+          playSynthChime([520 + idx * 45], 0.25, 'sine');
+        };
+
+        span.addEventListener('mouseenter', activateLetter);
+        span.addEventListener('click', () => {
+          if (span.dataset.transformed === 'true') {
+            span.textContent = pair.orig;
+            span.dataset.transformed = 'false';
+            span.classList.remove('active-juli');
+          } else {
+            activateLetter();
+          }
+        });
+
+        container.appendChild(span);
+      });
+    }
+    initHollywooSign();
+
+    function toggleAllHollywoo() {
+      allTransformed = !allTransformed;
+      const letters = document.querySelectorAll('#hollywoo-sign .hollywoo-letter');
+      letters.forEach((el, idx) => {
+        setTimeout(() => {
+          if (allTransformed) {
+            el.textContent = hollywooPairs[idx].alt;
+            el.dataset.transformed = 'true';
+            el.classList.add('active-juli');
+          } else {
+            el.textContent = hollywooPairs[idx].orig;
+            el.dataset.transformed = 'false';
+            el.classList.remove('active-juli');
+          }
+        }, idx * 55);
+      });
+      playSynthChime(allTransformed ? [523.25, 659.25, 783.99] : [659.25, 523.25], 0.35, 'sine');
+    }
+
+    /* -----------------------------------------------------------
+       FRASES ICÓNICAS DE BOJACK HORSEMAN EN LA BOTELLA
+    ------------------------------------------------------------ */
+    const bojackQuotes = [
+      "El universo es un monstruo cruel e indiferente... pero a veces es bonito tener a alguien que se quede contigo a mirar las estrellas.",
+      "Cada día se vuelve un poco más fácil... pero tienes que hacerlo todos los días. Esa es la parte difícil, pero se vuelve más fácil.",
+      "La vida es una perra y luego te mueres, pero a veces la vida es una perra y luego sigues viviendo.",
+      "No hay ningún secreto ni solución mágica; el sentido de la vida es el que tú decidas darle mientras sigues aquí.",
+      "A veces los finales no son trágicos, sino el cierre de una etapa para que empiece algo distinto, Juls."
+    ];
+    let bojackQuoteIdx = 0;
+
+    function shakePlanetariumBottle() {
+      bojackQuoteIdx = (bojackQuoteIdx + 1) % bojackQuotes.length;
+      const quoteEl = document.getElementById('bojack-quote-text');
+      quoteEl.style.opacity = '0';
+      setTimeout(() => {
+        quoteEl.textContent = `"${bojackQuotes[bojackQuoteIdx]}"`;
+        quoteEl.style.opacity = '1';
+      }, 180);
+
+      const box = document.getElementById('galaxy-box');
+      const colors = ['#c084fc', '#818cf8', '#fde047', '#38bdf8', '#f472b6'];
+      for (let i = 0; i < 24; i++) {
+        const spark = document.createElement('span');
+        spark.className = 'galaxy-spark';
+        const size = 4 + Math.random() * 6;
+        spark.style.width = `${size}px`;
+        spark.style.height = `${size}px`;
+        spark.style.background = colors[Math.floor(Math.random() * colors.length)];
+        spark.style.left = '50%';
+        spark.style.top = '45%';
+        spark.style.setProperty('--tx', `${(Math.random() - 0.5) * 260}px`);
+        spark.style.setProperty('--ty', `${(Math.random() - 0.5) * 200}px`);
+        box.appendChild(spark);
+        setTimeout(() => spark.remove(), 1250);
+      }
+
+      playSynthChime([659.25, 880, 1174.66], 0.45, 'sine');
+    }
+
+    /* -----------------------------------------------------------
+       REPRODUCTOR DE AUDIO CON FALLBACK AUTOMÁTICO PARA GITHUB
+    ------------------------------------------------------------ */
+    const tracksData = [
+      {
+        badge: 'PISTA 01 • TRENCH',
+        title: 'My Blood — Twenty One Pilots',
+        subtitle: '"Quédate conmigo, no tienes que enfrentarlo sola."',
+        lyric: '<strong class="text-[#fce300] font-space">||-// Lealtad incondicional:</strong> "Cuando todos se vayan y el mundo se ponga pesado, yo me quedo a cubrirte la espalda. Siempre."',
+        borderClass: 'border-[#fce300]',
+        candidates: ['cancion1.mp3', 'media/cancion1.mp3', 'audio/cancion1.mp3', 'assets/cancion1.mp3']
+      },
+      {
+        badge: 'PISTA 02 • MIXTAPE',
+        title: 'Canción 02 — Playlist de Juli',
+        subtitle: '"Una rola especial para celebrar tus 18 años."',
+        lyric: '<strong class="text-amber-300 font-space">🎵 Vibe de Cumpleaños:</strong> Para acompañar nuestras pláticas, risas y todo lo que viene de aquí en adelante, Juli.',
+        borderClass: 'border-amber-500/50',
+        candidates: ['cancion2.mp3', 'media/cancion2.mp3', 'audio/cancion2.mp3', 'assets/cancion2.mp3']
+      }
+    ];
+
+    let currentTrack = 0;
+    let candidateIdx = 0;
+    const audioElement = document.getElementById('direct-audio-element');
+    const directPlayIcon = document.getElementById('direct-play-icon');
+    const directPlayLabel = document.getElementById('direct-play-label');
+    const audioProgressBar = document.getElementById('audio-progress-bar');
+    const audioTimeLabel = document.getElementById('audio-time');
+    const audioStatusLabel = document.getElementById('audio-player-status');
+
+    function loadTrackCandidate(trackIdx, candIdx) {
+      const t = tracksData[trackIdx];
+      if (candIdx < t.candidates.length) {
+        candidateIdx = candIdx;
+        audioElement.src = t.candidates[candIdx];
+        audioElement.load();
+      }
+    }
+
+    loadTrackCandidate(0, 0);
+
+    audioElement.addEventListener('error', () => {
+      const t = tracksData[currentTrack];
+      if (candidateIdx + 1 < t.candidates.length) {
+        const wasPlaying = !audioElement.paused;
+        loadTrackCandidate(currentTrack, candidateIdx + 1);
+        if (wasPlaying) audioElement.play().catch(() => {});
+      }
+    });
+
+    function selectTrack(idx) {
+      currentTrack = idx;
+      const t = tracksData[idx];
+
+      document.getElementById('track-badge').textContent = t.badge;
+      document.getElementById('cassette-title').textContent = t.title;
+      document.getElementById('cassette-subtitle').textContent = t.subtitle;
+      document.getElementById('track-lyric-box').innerHTML = t.lyric;
+
+      loadTrackCandidate(idx, 0);
+      audioElement.play().then(() => {
+        directPlayIcon.textContent = '❚❚';
+        directPlayLabel.textContent = 'Pausar Canción';
+        audioStatusLabel.textContent = '🎵 Reproduciendo desde GitHub';
+        document.getElementById('reel-left').classList.add('reel-spinning');
+        document.getElementById('reel-right').classList.add('reel-spinning');
+        document.getElementById('tape-wave').textContent = '▶ SONANDO';
+      }).catch(() => {
+        directPlayIcon.textContent = '▶';
+        directPlayLabel.textContent = 'Reproducir Canción';
+      });
+
+      const card = document.getElementById('walkman-card');
+      card.className = `bg-stone-950/85 backdrop-blur-xl border-2 ${t.borderClass} rounded-3xl p-6 sm:p-8 shadow-2xl transition-all duration-500`;
+
+      document.querySelectorAll('.track-selector-btn').forEach((btn, i) => {
+        if (i === idx) {
+          btn.classList.add('bg-white/15', 'border-amber-300');
+          btn.classList.remove('bg-white/5', 'border-white/15');
+        } else {
+          btn.classList.remove('bg-white/15', 'border-amber-300');
+          btn.classList.add('bg-white/5', 'border-white/15');
+        }
+      });
+    }
+
+    function toggleDirectAudio() {
+      if (audioElement.paused) {
+        audioElement.play().then(() => {
+          directPlayIcon.textContent = '❚❚';
+          directPlayLabel.textContent = 'Pausar Canción';
+          audioStatusLabel.textContent = '🎵 Reproduciendo desde GitHub';
+          document.getElementById('reel-left').classList.add('reel-spinning');
+          document.getElementById('reel-right').classList.add('reel-spinning');
+          document.getElementById('tape-wave').textContent = '▶ SONANDO';
+        }).catch(() => {
+          showToast('⚠️ Verifica el archivo en GitHub', 'Asegúrate de tener cancion1.mp3 o cancion2.mp3 en tu repositorio.', 'border-rose-400 text-rose-300');
+        });
+      } else {
+        audioElement.pause();
+        directPlayIcon.textContent = '▶';
+        directPlayLabel.textContent = 'Reproducir Canción';
+        audioStatusLabel.textContent = '⏸ En pausa';
+        document.getElementById('reel-left').classList.remove('reel-spinning');
+        document.getElementById('reel-right').classList.remove('reel-spinning');
+        document.getElementById('tape-wave').textContent = '❚❚ PAUSA';
+      }
+    }
+
+    audioElement.addEventListener('timeupdate', () => {
+      if (audioElement.duration) {
+        const percent = (audioElement.currentTime / audioElement.duration) * 100;
+        audioProgressBar.style.width = `${percent}%`;
+
+        const curM = Math.floor(audioElement.currentTime / 60);
+        const curS = Math.floor(audioElement.currentTime % 60).toString().padStart(2, '0');
+        const durM = Math.floor(audioElement.duration / 60);
+        const durS = Math.floor(audioElement.duration % 60).toString().padStart(2, '0');
+        audioTimeLabel.textContent = `${curM}:${curS} / ${durM}:${durS}`;
+      }
+    });
+
+    audioElement.addEventListener('ended', () => {
+      directPlayIcon.textContent = '▶';
+      directPlayLabel.textContent = 'Reproducir Canción';
+      audioProgressBar.style.width = '0%';
+      document.getElementById('reel-left').classList.remove('reel-spinning');
+      document.getElementById('reel-right').classList.remove('reel-spinning');
+      document.getElementById('tape-wave').textContent = '❚❚ PAUSA';
+    });
+
+    function seekAudio(e) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const width = rect.width;
+      if (audioElement.duration) {
+        audioElement.currentTime = (clickX / width) * audioElement.duration;
+      }
+    }
+
+    function flipCard(wrapper) {
+      const inner = wrapper.querySelector('.preserve-3d');
+      inner.classList.toggle('flipped');
+      playSynthChime([620, 780], 0.2, 'sine');
+    }
+
+    function openLetterEnvelope(num, sealBtn) {
+      const content = document.getElementById(`letter-content-${num}`);
+      const placeholder = document.getElementById(`letter-placeholder-${num}`);
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        placeholder.classList.add('hidden');
+        sealBtn.textContent = '✓';
+        sealBtn.classList.add('opacity-75');
+        playSynthChime([587.33, 880], 0.4, 'sine');
+      }
+    }
+
+    function guideTurtles(e) {
+      const container = document.getElementById('aquarium-container');
+      const rect = container.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const clickY = e.clientY - rect.top;
+
+      for (let i = 0; i < 9; i++) {
+        const bubble = document.createElement('span');
+        bubble.className = 'water-bubble';
+        const size = 6 + Math.random() * 12;
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        bubble.style.left = `${clickX + (Math.random() - 0.5) * 45}px`;
+        bubble.style.top = `${clickY + (Math.random() - 0.5) * 20}px`;
+        bubble.style.animationDuration = `${1.2 + Math.random() * 0.9}s`;
+        container.appendChild(bubble);
+        setTimeout(() => bubble.remove(), 2100);
+      }
+
+      const turtles = [
+        { id: 'swim-turtle-1', ox: -35, oy: -20 },
+        { id: 'swim-turtle-2', ox: 25, oy: 18 },
+        { id: 'relic-btn-4', ox: -10, oy: -42 }
+      ];
+
+      turtles.forEach((t) => {
+        const el = document.getElementById(t.id);
+        if (!el) return;
+        const currentLeft = parseFloat(el.style.left) || 30;
+        const targetPercentX = Math.min(82, Math.max(5, ((clickX + t.ox) / rect.width) * 100));
+        const targetPercentY = Math.min(72, Math.max(8, ((clickY + t.oy) / rect.height) * 100));
+
+        const flipScale = targetPercentX < currentLeft ? -1 : 1;
+        el.style.left = `${targetPercentX}%`;
+        el.style.top = `${targetPercentY}%`;
+        el.style.transform = `scaleX(${flipScale})`;
+      });
+
+      playSynthChime([493.88, 659.25], 0.3, 'sine');
+    }
+
+    setInterval(() => {
+      ['swim-turtle-1', 'swim-turtle-2', 'relic-btn-4'].forEach((id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const curX = parseFloat(el.style.left) || 40;
+        const curY = parseFloat(el.style.top) || 40;
+        const nextX = Math.min(82, Math.max(8, curX + (Math.random() - 0.5) * 24));
+        const nextY = Math.min(70, Math.max(12, curY + (Math.random() - 0.5) * 18));
+        el.style.left = `${nextX}%`;
+        el.style.top = `${nextY}%`;
+        el.style.transform = `scaleX(${nextX < curX ? -1 : 1})`;
+      });
+    }, 4500);
+
+    const emotionNotes = [
+      {
+        tag: '🌙 Modo Tortuga Zen',
+        text: '"Respira hondo, Juls. No tienes que resolver toda tu vida adulta hoy mismo; avanza a tu propio ritmo, como tortuga en corriente tranquila, que vas exactamente bien."'
+      },
+      {
+        tag: '🎸 Modo Intensidad Máxima',
+        text: '"Pon tu canción favorita a todo volumen, saca todo eso que traes guardado y conviértelo en impulso. Tienes una fuerza enorme, Juli."'
+      },
+      {
+        tag: '🍷 Modo Risas & Anécdotas',
+        text: '"En cuanto quieras recordar anécdotas, mandarnos reels de madrugada y reírnos hasta que duela, aquí estoy listo."'
+      },
+      {
+        tag: '🫂 Recordatorio Incondicional',
+        text: '"Si algún día dudas de ti, acuérdate de todo lo que ya has logrado para llegar hasta tus 18. Eres increíble y muy capaz, Juls."'
+      }
+    ];
+
+    function openEmotionJar(idx) {
+      const note = emotionNotes[idx];
+      document.getElementById('emotion-card-tag').textContent = note.tag;
+      document.getElementById('emotion-card-text').textContent = note.text;
+      playSynthChime([523.25, 659.25, 783.99], 0.35, 'sine');
+    }
+
+    function openFinalGiftBox() {
+      playSynthChime([523.25, 659.25, 783.99, 1046.5, 1318.5], 0.75, 'triangle');
+      launchConfettiBurst(170);
+      openModal('final-letter-modal');
+    }
+
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  </script>
+</body>
+</html>
